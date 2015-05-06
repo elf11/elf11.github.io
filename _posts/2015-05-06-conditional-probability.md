@@ -6,8 +6,8 @@ description: "Conditional probability - a refresher"
 
 tags: [probability, maths, conditional probability]
 
-image:
-  feature: abstract-3.jpg
+<!-- image:
+  feature: abstract-3.jpg -->
 
 comments: true
 share: true
