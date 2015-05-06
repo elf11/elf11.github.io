@@ -3,15 +3,12 @@ layout: post
 title: Short dive into Conditional Probability - refresher
 description: "Conditional probability - a refresher"
 <!-- modified: 2015-05-06 -->
-
 tags: [probability, maths, conditional probability]
-
 image:
   feature: abstract-3.jpg
   credit: dargadgetz
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
-
-<!-- comments: true -->
+comments: true
 share: true
 ---
 
