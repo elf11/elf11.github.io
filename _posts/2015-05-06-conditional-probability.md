@@ -9,8 +9,10 @@ tags: [probability, maths, conditional probability]
 image:
   feature: abstract-3.jpg
 
-<!-- comments: true -->
-<!-- share: true -->
+comments: true
+
+share: true
+
 ---
 
 I hope this to be one of the many to come short and to the point posts about different aspects of data analysis and how to tackle data analysing problems. The purpose of this is to be a short refresher course in different core aspects of machine learning and data analysis. This being said the first problem I tackle is the Conditional probability.
