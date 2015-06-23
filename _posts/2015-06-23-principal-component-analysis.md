@@ -100,6 +100,7 @@ Influence of each of the initial 140 - something variables to the principal comp
 
 <div style="align: center;"><img src="/images/Complete_PCA_Load_Alternative.png" alt="Figure12"></div>
 
+The 3 variables that are situated on the periphery are again population, medianIncome and households.
 
 # Conclusions
 
