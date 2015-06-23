@@ -29,3 +29,11 @@ In the broadband example we have 118 dimensional data (dimensions) for 67 counti
 First task of PCA is to identify a new set of orthogonal coordinate axes through the data. This is achieved by finding the direction of maximal variance through the coordinates in the 118 dimensional space. It is equivalent to obtaining the (least-squares) line of best fit through the plotted data. We call this new axis the first principal component of the data. After this we can orthogonal projection to map the coordinates on this axis. This is the first principal component.
 
 <div style="align: center;"><img src="/images/Broadband_PC1_Analysis.png" alt="Figure1"></div>
+
+This type of diagram is known as a score plot. We can see already some clusters forming, in the sense that counties on the far right are forming a cluster (insert_counties_ids), then there are the central group of counties as a bulk, then another 4 counties that represent interest (insert_counties_ids), two smaller clusters, and another 2 counties that stand out (insert_counties_ids) at the opposite end of the axis. 
+
+From the PCA we add another axis - the second principal component, which is orthogonal to the first PC, and is the next best direction for approximating the original data (finds the direction of second largest variance in the data). We project our coordinates down onto this plane and we find the second figure.
+
+<div style="align: center;"><img src="/images/Broadband_PCA_Analysis.png" alt="Figure1"></div>
+
+

@@ -12,7 +12,7 @@ comments: true
 share: true
 ---
 
-This article will be one of a few articles done during my internship with the M-Lab organization `link: http://measurementlab.net/` in the Outreachy Summer 2015 program. During this time I will work with different data from broadbandmap.gov `link: http://broadbandmap.gov/` and census.gov `link: http://census.gov/` and probably other sites to try and establish a correlation between the internet broadband connection penetration rate in a community (or how many people have high-speed internet) and the characteristics of that community. Basically, what I want to do is to characterize the communities with internet connection and those without and see why the former are attractive to the Internet Service Providers and the latter are not. (Maybe some socio-economic factors are influencing the availablity of internet connection: like income, education, age, race).
+This article will be one of a few articles done during my internship with the M-Lab organization link: http://measurementlab.net/ in the Outreachy Summer 2015 program. During this time I will work with different data from broadbandmap.gov link: http://broadbandmap.gov/ and census.gov `link: http://census.gov/` and probably other sites to try and establish a correlation between the internet broadband connection penetration rate in a community (or how many people have high-speed internet) and the characteristics of that community. Basically, what I want to do is to characterize the communities with internet connection and those without and see why the former are attractive to the Internet Service Providers and the latter are not. (Maybe some socio-economic factors are influencing the availablity of internet connection: like income, education, age, race).
 
 What is Principal Component Analysis (PCA)? A technique that transforms a number of possibly correlated variables into a smaller number of variables called principal components. It is most commonly used as a first stepin trying to analyse large data sets. (Other applications include de-noissing signals and data compression.) 
 
@@ -29,3 +29,9 @@ In the broadband example we have 118 dimensional data (dimensions) for 67 counti
 First task of PCA is to identify a new set of orthogonal coordinate axes through the data. This is achieved by finding the direction of maximal variance through the coordinates in the 118 dimensional space. It is equivalent to obtaining the (least-squares) line of best fit through the plotted data. We call this new axis the first principal component of the data. After this we can orthogonal projection to map the coordinates on this axis. This is the first principal component.
 
 <div style="align: center;"><img src="/images/Broadband_PC1_Analysis.png" alt="Figure1"></div>
+
+This type of diagram is known as a score plot. We can see already some clusters forming, in the sense that counties on the far right are forming a cluster (insert_counties_ids), then there are the central group of counties as a bulk, then another 4 counties that represent interest (insert_counties_ids), two smaller clusters, and another 2 counties that stand out (insert_counties_ids) at the opposite end of the axis. 
+
+From the PCA we add another axis - the second principal component, which is orthogonal to the first PC, and is the next best direction for approximating the original data (finds the direction of second largest variance in the data). We project our coordinates down onto this plane and we find the second figure.
+
+<div style="align: center;"><img src="/images/Broadband_PCA_Analysis.png" alt="Figure1"></div>
