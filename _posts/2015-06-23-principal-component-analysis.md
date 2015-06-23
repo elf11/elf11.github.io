@@ -102,6 +102,10 @@ Influence of each of the initial 140 - something variables to the principal comp
 
 The 3 variables that are situated on the periphery are again population, medianIncome and households.
 
+The county code for the one on the far right is 25017, looking at the data for the 3 most influencial variables for this county (medianIncome, households, and population) we can observe that all of them are high for the said county.
+
+<div style="align: center;"><img src="/images/NEngland_demo_1.png" alt="Figure13"></div>
+
 # Conclusions
 
 The data-sets for broadband internet connection as well as the combined data set might (probably) suffer from the curse of dimensionality. We can observe that the data spreads out away from the central point. The curse of dimensionality states that the higher the number of dimensions the more the data will spread out away from the center. So, the larger the number of variables the more samples we will need. So for making those last two data sets usable we need to either increase the number of samples (at the moment we used the 67 counties in the New England region - maybe increase it at national level, but that will be around ~3200 counties, it might be a little bit difficult to read such a graph), or to decrease the number of variables (we have to decide which varibles to drop and which ones to keep).
