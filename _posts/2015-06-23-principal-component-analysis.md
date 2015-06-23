@@ -48,7 +48,7 @@ We are also considering the influence of each of the original variables (118 one
 
 <div style="align: center;"><img src="/images/Broadband_PCA_Load_Alternative.png" alt="Figure4"></div>
 
-Observe that there is a central group of variables around the middle of each principal component, with 4 variables on the periphery that do not seem to be part of the group (mostCommonUploadSpeed around -0.8, mostCommonDownloadSpeed around -0.4, greatestUploadSpeed around -0.2, greatestDownloadSpeed around 0.0). Perhaps, there is some association to be made between the counties that were away from the clusters in the score plot and those 4 variables.
+Observe that there is a central group of variables around the middle of each principal component, with 4 variables on the periphery that do not seem to be part of the group (mostCommonUploadSpeed ~(-0.8,0.0), mostCommonDownloadSpeed ~(-0.4, -0.2), greatestUploadSpeed ~(-0.2, 0.8), greatestDownloadSpeed ~(0.0,0.4) ). Perhaps, there is some association to be made between the counties that were away from the clusters in the score plot and those 4 variables.
 
 Next, I am going to add the same graphs for the demographics data set and the combination of the two data sets.
 
