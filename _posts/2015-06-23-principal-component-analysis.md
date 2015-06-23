@@ -99,3 +99,9 @@ As before (in the demographics data set) the first component gives the most vari
 Influence of each of the initial 140 - something variables to the principal components.
 
 <div style="align: center;"><img src="/images/Complete_PCA_Load_Alternative.png" alt="Figure12"></div>
+
+
+# Conclusions
+
+The data-sets for broadband internet connection as well as the combined data set might (probably) suffer from the curse of dimensionality. We can observe that the data spreads out away from the central point. The curse of dimensionality states that the higher the number of dimensions the more the data will spread out away from the center. So, the larger the number of variables the more samples we will need. So for making those last two data sets usable we need to either increase the number of samples (at the moment we used the 67 counties in the New England region - maybe increase it at national level, but that will be around ~3200 counties, it might be a little bit difficult to read such a graph), or to decrease the number of variables (we have to decide which varibles to drop and which ones to keep).
+
