@@ -28,4 +28,4 @@ In the broadband example we have 118 dimensional data (dimensions) for 67 counti
 
 First task of PCA is to identify a new set of orthogonal coordinate axes through the data. This is achieved by finding the direction of maximal variance through the coordinates in the 118 dimensional space. It is equivalent to obtaining the (least-squares) line of best fit through the plotted data. We call this new axis the first principal component of the data. After this we can orthogonal projection to map the coordinates on this axis. This is the first principal component.
 
-<div style="align: center;"><img src="/images/dice.png" alt="Figure1"></div>
+<div style="align: center;"><img src="/images/Broadband_PC1_Analysis.png" alt="Figure1"></div>
