@@ -86,6 +86,10 @@ The score plot:
 
 <div style="align: center;"><img src="/images/Complete_PC1_Analysis.png" alt="Figure9"></div>
 
+The county code for the one on the far right is 25017, looking at the data for the 3 most influencial variables for this county (medianIncome, households, and population) we can observe that all of them are high for the said county.
+
+<div style="align: center;"><img src="/images/NEngland_demo_1.png" alt="Figure13"></div>
+
 The PCA in 2D:
 
 <div style="align: center;"><img src="/images/Complete_PCA_Analysis.png" alt="Figure10"></div>
@@ -101,10 +105,6 @@ Influence of each of the initial 140 - something variables to the principal comp
 <div style="align: center;"><img src="/images/Complete_PCA_Load_Alternative.png" alt="Figure12"></div>
 
 The 3 variables that are situated on the periphery are again population, medianIncome and households.
-
-The county code for the one on the far right is 25017, looking at the data for the 3 most influencial variables for this county (medianIncome, households, and population) we can observe that all of them are high for the said county.
-
-<div style="align: center;"><img src="/images/NEngland_demo_1.png" alt="Figure13"></div>
 
 # Conclusions
 
