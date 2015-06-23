@@ -72,8 +72,30 @@ The contributions of each component to the total variance:
 
 We can observe that the first component contributes the most to the total variance, the other components having a much much more smaller contribution.
 
-Influence of each of the initial 20 variables to the principal components.
+Influence of each of the initial 20 - something variables to the principal components.
 
-<div style="align: center;"><img src="/images/Demographics_PCA_Load_Alternative.png" alt="Figure4"></div>
+<div style="align: center;"><img src="/images/Demographics_PCA_Load_Alternative.png" alt="Figure8"></div>
 
-Again it can be observed those in the central group of variables in the middle of each of the principal components (on the graph we can see only 2 of them, the other ones having values less than e^-04) and those variables on the periphery: medianIncome ~(0.0, -1.0), households ~(0.4, 0.5), population ~(1.0, -0.0) .
+Again it can be observed those in the central group of variables in the middle of each of the principal components (on the graph we can see only 2 of them, the other ones having values less than e^-04) and those variables on the periphery: medianIncome ~(0.0, -1.0), households ~(0.4, 0.5), population ~(1.0, -0.2) .
+
+# Combining the two data sets
+
+Now, the data set has around 144 dimensions (the variables) and 67 observations (the counties from New England region).
+
+The score plot:
+
+<div style="align: center;"><img src="/images/Complete_PC1_Analysis.png" alt="Figure9"></div>
+
+The PCA in 2D:
+
+<div style="align: center;"><img src="/images/Complete_PCA_Analysis.png" alt="Figure10"></div>
+
+The contributions of each component to the total variance:
+
+<div style="align: center;"><img src="/images/Complete_EigenSpectrum.png" alt="Figure11"></div>
+
+As before (in the demographics data set) the first component gives the most variance.
+
+Influence of each of the initial 140 - something variables to the principal components.
+
+<div style="align: center;"><img src="/images/Complete_PCA_Load_Alternative.png" alt="Figure12"></div>
