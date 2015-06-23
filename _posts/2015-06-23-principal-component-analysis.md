@@ -12,7 +12,7 @@ comments: true
 share: true
 ---
 
-This article will be one of a few articles done during my internship with the M-Lab organization link: http://measurementlab.net/ in the Outreachy Summer 2015 program. During this time I will work with different data from broadbandmap.gov link: http://broadbandmap.gov/ and census.gov `link: http://census.gov/` and probably other sites to try and establish a correlation between the internet broadband connection penetration rate in a community (or how many people have high-speed internet) and the characteristics of that community. Basically, what I want to do is to characterize the communities with internet connection and those without and see why the former are attractive to the Internet Service Providers and the latter are not. (Maybe some socio-economic factors are influencing the availablity of internet connection: like income, education, age, race).
+This article will be one of a few articles done during my internship with the M-Lab organization `link: http://measurementlab.net/` in the Outreachy Summer 2015 program. During this time I will work with different data from broadbandmap.gov `link: http://broadbandmap.gov/` and census.gov `link: http://census.gov/` and probably other sites to try and establish a correlation between the internet broadband connection penetration rate in a community (or how many people have high-speed internet) and the characteristics of that community. Basically, what I want to do is to characterize the communities with internet connection and those without and see why the former are attractive to the Internet Service Providers and the latter are not. (Maybe some socio-economic factors are influencing the availablity of internet connection: like income, education, age, race).
 
 # Principal Component Analysis explained
 
@@ -22,7 +22,7 @@ PCA uses projection (a vector space transformation) to reduce the dimensionality
 
 We are going to examine 3 data sets, all of them collected from broadbandmap.gov site. The data sets offer information about broad-band internet connection (the first data set) in the counties from the New England Region states (there are 67 counties in the 6 New England States - Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont.), the demographics data for the same counties, and the third data set will be a combination of the first data sets, with information for each county that will comprise of broadband internet and demographics (basically we join the two data sets on the county id).
 
-The broadband internet connection data set has around 118 dimensions, for obvious reason it would be impossible to see any trends in this data set. The data set can be seen link: https://github.com/elf11/Outreachy-Mlab/blob/master/code/broad_sum.csv, it has information about upload and download speed, wireless and wireline internet connection (and specific speeds for those as well as the percentage of population that has such a connection).
+The broadband internet connection data set has around 118 dimensions, for obvious reason it would be impossible to see any trends in this data set. The data set can be seen `link: https://github.com/elf11/Outreachy-Mlab/blob/master/code/broad_sum.csv` , it has information about upload and download speed, wireless and wireline internet connection (and specific speeds for those as well as the percentage of population that has such a connection).
 
 To make sense of the data and see if there are any trends that are not obvious by looking at the data we could use a series of bivariate plots (scatter diagrams) and analyse these to determine any relationship between variables. But, typically the number of such plots is O(n^2), where n is the number of variables. Clearly, this is not feasible. But, we can use PCA to perform such an analysis simultaneously.
 
@@ -54,9 +54,26 @@ Next, I am going to add the same graphs for the demographics data set and the co
 
 # Demographics data
 
-The demographics data set can be accessed at following the link: https://github.com/elf11/Outreachy-Mlab/blob/master/code/broad_sum.csv .
+The demographics data set can be accessed at following the `link: https://github.com/elf11/Outreachy-Mlab/blob/master/code/broad_sum.csv` .
 
 The score plot:
 
-<div style="align: center;"><img src="/images/Demographics_PC1_Analysis.png" alt="Figure1"></div>
+<div style="align: center;"><img src="/images/Demographics_PC1_Analysis.png" alt="Figure5"></div>
 
+We can observe a cluster forming in the far left, and then a series of alone counties (insert_counties_ids) .
+
+The PCA in 2D:
+
+<div style="align: center;"><img src="/images/Demographics_PCA_Analysis.png" alt="Figure6"></div>
+
+The contributions of each component to the total variance:
+
+<div style="align: center;"><img src="/images/Demographics_EigenSpectrum.png" alt="Figure7"></div>
+
+We can observe that the first component contributes the most to the total variance, the other components having a much much more smaller contribution.
+
+Influence of each of the initial 20 variables to the principal components.
+
+<div style="align: center;"><img src="/images/Demographics_PCA_Load_Alternative.png" alt="Figure4"></div>
+
+Again it can be observed those in the central group of variables in the middle of each of the principal components (on the graph we can see only 2 of them, the other ones having values less than e^-04) and those variables on the periphery: medianIncome ~(0.0, -1.0), households ~(0.4, 0.5), population ~(1.0, -0.0) .
