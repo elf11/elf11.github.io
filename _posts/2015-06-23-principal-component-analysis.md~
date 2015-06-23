@@ -34,4 +34,28 @@ This type of diagram is known as a score plot. We can see already some clusters 
 
 From the PCA we add another axis - the second principal component, which is orthogonal to the first PC, and is the next best direction for approximating the original data (finds the direction of second largest variance in the data). We project our coordinates down onto this plane and we find the second figure.
 
-<div style="align: center;"><img src="/images/Broadband_PCA_Analysis.png" alt="Figure1"></div>
+<div style="align: center;"><img src="/images/Broadband_PCA_Analysis.png" alt="Figure2"></div>
+
+The PCA method offers information about the contributions of each principal component to the total variance of the coordinates. We can plot this as a graph of the eigenvectors. As it can be seen from the graph the first two components account for the majority of the variation in the data. (A reduction from 118 dimensions to 2 dimensions). (In practice, it is usually sufficient to include enough principal components so that somewhere in the region of 70-80% of the variation in the data is accounted for.)
+
+<div style="align: center;"><img src="/images/Broadband_EigenSpectrum.png" alt="Figure3"></div>
+
+We are also considering the influence of each of the original variables (118 ones of them) upon the principal components.
+
+<div style="align: center;"><img src="/images/Broadband_PCA_Load_Alternative.png" alt="Figure4"></div>
+
+Observe that there is a central group of variables around the middle of each principal component, with 4 variables on the periphery that do not seem to be part of the group (mostCommonUploadSpeed around -0.8, mostCommonDownloadSpeed around -0.4, greatestUploadSpeed around -0.2, greatestDownloadSpeed around 0.0).
+
+Observe that there is a central group of variables around the
+middle of each principal
+component, with four variables on the periphery that do not s
+eem to be part of the group.
+Recall the 2D score plot (Figure 2), on which England, Wales a
+nd Scotland were clustered
+together, whilst Northern Ireland was the country that was a
+way from the cluster. Perhaps
+there is some association to be made between the four variabl
+es that are away from the
+cluster in Figure 4 and the country that is located away from t
+he rest of the countries
+in Figure 2, Northern Ireland
