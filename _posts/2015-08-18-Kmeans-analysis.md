@@ -343,7 +343,7 @@ To sustain the findings of the New England analysis (the difference in service b
 	<a href="/images/Average_MedianRTT1.png"><img src="/images/Average_MedianRTT1.png" alt=""></a>
 	<a href="/images/Average_Download1.png"><img src="/images/Average_Download1.png" alt=""></a>
 	<a href="/images/Average_Upload1.png"><img src="/images/Average_Upload1.png" alt=""></a>
-	<figcaption style="align: center;">Figure 8. m-lab data mean values for RTT, upload and download</figcaption>
+	<figcaption style="align: center;">Figure 12. m-lab data mean values for RTT, upload and download</figcaption>
 </figure>
 
 As it can be seen in the graphs, cluster 3 has a pretty low population, but it has one of the highest means for median income, so the low RTT and high upload and download speed might be explained by that. Cluster 4 which has a high population has a RTT on the lower end and a good download speed, but an upload speed on the lower spectrum. This might not mean anything, but if we look at those clusters with low population - Cluster 1,8 and 9, and with a median income on the average lower end, we observe how they have the highest RTT (cluster 1 and 8), the lowest download speed (cluster 1) or down speeds on the slow spectrum (both clusters 8 and 9). The same situation can be observed with upload speed for those 3 clusters.
