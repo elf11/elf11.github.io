@@ -240,7 +240,7 @@ To further highlight the difference in service between the rural and urban commu
 
 <figure class="third">
 	<a href="/images/MedianRTT_83.png"><img src="/images/MedianRTT_83.png" alt=""></a>
-	<a href="/images/MedianUpload_83.png"><img src="/images/MedianUpload_83.png" alt=""></a>
-	<a href="/images/MedianDownload_83.png"><img src="/images/MedianDownload_83.png" alt=""></a>
-	<figcaption style="align: center;">Figure 7. m-lab data mean demographics characteristics for each cluster</figcaption>
+	<a href="/images/MedianUpload83.png"><img src="/images/MedianUpload83.png" alt=""></a>
+	<a href="/images/MedianDownload83.png"><img src="/images/MedianDownload83.png" alt=""></a>
+	<figcaption style="align: center;">Figure 8. m-lab data mean values for RTT, upload and download</figcaption>
 </figure>
