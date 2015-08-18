@@ -261,6 +261,22 @@ We have extended the analysis on data from the South Atlantic region. We applied
 	<figcaption style="align: center;">Figure 9. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for m-lab data (d) Variance explained for m-lab data</figcaption>
 </figure>
 
-We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means.
+We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means. We are going to further present the demographics data just for the clusters formed by applying k-means on the m-lab data set, since that is the most relevant one.For this data set we decided to represent population as population density, calculated as county_population/land_area of a county. 
+
+<figure class="third">
+	<a href="/images/Density_Combined_1_cluster_group_0.png"><img src="/images/Density_Combined_1_cluster_group_0.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_1.png"><img src="/images/Density_Combined_1_cluster_group_1.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_2.png"><img src="/images/Density_Combined_1_cluster_group_2.png" alt=""></a>
+</figure>
+<figure class="third">
+	<a href="/images/Density_Combined_1_cluster_group_3.png"><img src="/images/Density_Combined_1_cluster_group_3.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_4.png"><img src="/images/Density_Combined_1_cluster_group_4.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_5.png"><img src="/images/Density_Combined_1_cluster_group_5.png" alt=""></a>
+<figure class="third">
+	<a href="/images/Density_Combined_1_cluster_group_6.png"><img src="/images/Density_Combined_1_cluster_group_6.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_7.png"><img src="/images/Density_Combined_1_cluster_group_7.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_8.png"><img src="/images/Density_Combined_1_cluster_group_8.png" alt=""></a>
+	<figcaption style="align: center;">Figure 6. m-lab data clustered and demographics characteristics plotted</figcaption>
+</figure>
 
 
