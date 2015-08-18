@@ -40,4 +40,8 @@ The steps are repeated until convergence has been reached. We choose to use k-me
 
 ### Intuition
 
-
+Figure 1 shows k-means with a 2 dimensional feature vector, each point has two dimensions and x and a y. In our work we used a data set with a lot more features, in fact the broadbandmap.gov data set still has around 50 features after we cleaned it up. So we can only visualize the data in 2 or 3 dimensions, but to get a better intuition the figure uses a 2 dimensional vector that is clustered, the training examples are shown as dots and the centroids are shown as crosses. (a) is the original data set, (b) represents the random initial cluster centroids and images (c-f) illustrates two running of the k-means algorithm. In each iteration, each training example is assigned to the closest cluster centroid, then the cluster centroid is moved to the mean of the points assigned to it. This is the method we used in our analysis too.
+<figure>
+	<a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png"><img src="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" alt=""></a>
+	<figcaption><a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" title="Figure 1">Figure 1</a>.</figcaption>
+</figure>
