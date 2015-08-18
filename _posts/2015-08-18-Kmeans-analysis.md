@@ -337,4 +337,13 @@ Due to the fact that we can not spot the trends so well in all those graphs, we 
 	<figcaption style="align: center;">Figure 11. m-lab data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
+To sustain the findings of the New England analysis (the difference in service between the rural and urban communities, as well as between communities with a higher median income and those with a lower median income), we plotted the mean values for RTT, upload and download (in Mb/s) for each of those clusters in the South Atlantic region.
+
+<figure class="third">
+	<a href="/images/Average_MedianRTT1.png"><img src="/images/Average_MedianRTT1.png" alt=""></a>
+	<a href="/images/Average_Download1.png"><img src="/images/Average_Download1.png" alt=""></a>
+	<a href="/images/Average_Upload1.png"><img src="/images/Average_Upload1.png" alt=""></a>
+	<figcaption style="align: center;">Figure 8. m-lab data mean values for RTT, upload and download</figcaption>
+</figure>
+
 
