@@ -325,7 +325,16 @@ We can observe that this time the number of clusters is 9, so k=9 to be able to 
 	<a href="/images/Density_Combined_1_cluster_group_6.png"><img src="/images/Density_Combined_1_cluster_group_6.png" alt=""></a>
 	<a href="/images/Density_Combined_1_cluster_group_7.png"><img src="/images/Density_Combined_1_cluster_group_7.png" alt=""></a>
 	<a href="/images/Density_Combined_1_cluster_group_8.png"><img src="/images/Density_Combined_1_cluster_group_8.png" alt=""></a>
-	<figcaption style="align: center;">Figure 6. m-lab data clustered and demographics characteristics plotted</figcaption>
+	<figcaption style="align: center;">Figure 10. m-lab data clustered and demographics characteristics plotted</figcaption>
+</figure>
+
+Due to the fact that we can not spot the trends so well in all those graphs, we plotted graphs with the median values for each cluster for population, number of households and median income.
+
+<figure class="third">
+	<a href="/images/Median_Population_comb_1.png"><img src="/images/Median_Population_comb_1.png" alt=""></a>
+	<a href="/images/Median_Households_comb_1.png"><img src="/images/Median_Households_comb_1.png" alt=""></a>
+	<a href="/images/Median_MedianIncome_comb_1.png"><img src="/images/Median_MedianIncome_comb_1.png" alt=""></a>
+	<figcaption style="align: center;">Figure 11. m-lab data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
 
