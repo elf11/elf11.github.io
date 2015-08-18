@@ -39,7 +39,7 @@ The steps are repeated until convergence has been reached. We choose to use k-me
 ### Intuition
 
 Figure 1 shows k-means with a 2 dimensional feature vector, each point has two dimensions and x and a y. In our work we used a data set with a lot more features, in fact the broadbandmap.gov data set still has around 50 features after we cleaned it up. So we can only visualize the data in 2 or 3 dimensions, but to get a better intuition the figure uses a 2 dimensional vector that is clustered, the training examples are shown as dots and the centroids are shown as crosses. (a) is the original data set, (b) represents the random initial cluster centroids and images (c-f) illustrates two running of the k-means algorithm. In each iteration, each training example is assigned to the closest cluster centroid, then the cluster centroid is moved to the mean of the points assigned to it. This is the method we used in our analysis too.
-<figure style="align: center;">
+<figure>
 	<a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png"><img src="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" alt=""></a>
 	<figcaption><a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" title="Figure 1, credit stanford.edu">Figure 1, credit stanford.edu</a>.</figcaption>
 </figure>
@@ -96,3 +96,94 @@ def normal_func(broad_df, names, ending):
         plt.close()
 {% endhighlight %}
 
+After that we had to decide on the best size for k (the number of clusters), so we run k-means over the data sets using scikit-learn in Python. Since intuition fails in high dimensions to choose the k we used the results from PCA and applied k-means over those results in order to obtain a 2-D visualisation of the clusters and to obtain a curve that describes the percentage of variance explained by each value of k between 1 and 14. As it can be seen in the code below, we read the values from the data frame, then we use a train_test_split function to split the size of our data set in two, we used 30% of the data for training, and the rest for testing (in practice the training set is somewhere between 20-40 %). After that we are applying PCA on the training set (we decided previously that the dimensionality of the data can be reduce to two without losing too much of the data variance), and on the data resulted from the PCA we apply k-means and plot the clusters in 2D.
+
+To determine the best value for k, we fit the k-means model for each k in [1,14], calculated the Euclidean distance from each point to each centroid (cluster center), calculated the within cluster sum of squares (the distance between all the points in a cluster and the centroid), then the total sum of squares and the between clusters sum of squares. The variance explained by each k is function of the between clusters sum of squares.
+
+{% highlight python %}
+def kmeans_func(broad_df, K, fileName):
+    pc_toarray = broad_df.values
+    hpc_fit, hpc_fit1 = train_test_split(pc_toarray, train_size=.3)
+    print broad_df.head()
+    
+    hpc = PCA(n_components=2).fit_transform(hpc_fit)
+    print hpc
+    k_means = KMeans(n_clusters=K)
+    k_means.fit(hpc)
+    
+    x_min, x_max = hpc[:, 0].min() - 8, hpc[:, 0].max() + 8
+    y_min, y_max = hpc[:, 1].min() - 5, hpc[:, 1].max() + 5
+    print x_min, x_max
+    print y_min, y_max
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, .02), np.arange(y_min, y_max, .02))
+    
+    Z = k_means.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+    
+    plt.figure(1)
+    plt.clf()
+    plt.imshow(Z, interpolation='nearest',
+              extent=(xx.min(), xx.max(), yy.min(), yy.max()),
+              cmap=plt.cm.Paired,
+              aspect='auto', origin='lower')
+    
+    plt.plot(hpc[:, 0], hpc[:, 1], 'k.', markersize=4)
+    centroids = k_means.cluster_centers_
+    inert = k_means.inertia_
+    plt.scatter(centroids[:, 0], centroids[:, 1],
+               marker='x', s=169, linewidths=3,
+               color='b', zorder=8)
+    plt.xlim(x_min, x_max)
+    plt.ylim(y_min, y_max)
+    plt.xticks(())
+    plt.yticks(())
+    fileName = fileName + 'kmeans.png'
+    plt.savefig(fileName, dpi=125)
+    
+    
+    
+    # Determine your k range
+    k_range = range(1,14)
+    
+    # Fit the kmeans model for each n_clusters = k
+    k_means_var = [KMeans(n_clusters=k).fit(hpc) for k in k_range]
+    
+    # Pull out the cluster centers for each model
+    centroids = [X.cluster_centers_ for X in k_means_var]
+    
+    # Calculate the Euclidean distance from 
+    # each point to each cluster center
+    k_euclid = [cdist(hpc, cent, 'euclidean') for cent in centroids]
+    dist = [np.min(ke,axis=1) for ke in k_euclid]
+    
+    # Total within-cluster sum of squares
+    wcss = [sum(d**2) for d in dist]
+    
+    # The total sum of squares
+    tss = sum(pdist(hpc)**2)/hpc.shape[0]
+    
+    # The between-cluster sum of squares
+    bss = tss - wcss
+    
+    # elbow curve
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.plot(k_range, bss/tss*100, 'b*-')
+    ax.set_ylim((0,100))
+    plt.grid(True)
+    plt.xlabel('n_clusters')
+    plt.ylabel('Percentage of variance explained')
+    plt.title('Variance Explained vs. k')
+    fileName = fileName + 'variance_explained.png'
+    plt.savefig(fileName, dpi=125)
+{% endhighlight %}
+
+The plotted clusters in 2D and the variance plots can be observed in Figure3. Images (a-b) are representative for broadbandmap.gov data and images (c-d) are representative for M-lab data set.
+
+<figure class="half">
+	<img src="/images/BBand_83kmeans.png" alt="">
+	<img src="/images/BBand_83kmeans.pngvariance_explained.png" alt="">
+	<img src="/images/Combined_83kmeans.png" alt="">
+	<img src="/images/Combined_83kmeans.pngvariance_explained.png" alt="">
+	<figcaption>Figure 3. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for M-lab data (d) Variance explained for M-lab data</figcaption>
+</figure>
