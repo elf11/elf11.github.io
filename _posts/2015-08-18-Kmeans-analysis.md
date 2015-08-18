@@ -178,7 +178,7 @@ def kmeans_func(broad_df, K, fileName):
     plt.savefig(fileName, dpi=125)
 {% endhighlight %}
 
-The plotted clusters in 2D and the variance plots can be observed in Figure3. Images (a-b) are representative for broadbandmap.gov data and images (c-d) are representative for M-lab data set.
+The plotted clusters in 2D and the variance plots can be observed in Figure3. Images (a-b) are representative for broadbandmap.gov data and images (c-d) are representative for M-lab data set. As it can be seen in the variance graphs, most of the variance can be explained with k=6 for both sets of data, so next we are going to use that value for assigning each county in the New England region to a cluster.
 
 <figure class="half">
 	<a href="/images/BBand_83kmeans.png"><img src="/images/BBand_83kmeans.png" alt=""></a>
@@ -186,4 +186,16 @@ The plotted clusters in 2D and the variance plots can be observed in Figure3. Im
 	<a href="/images/Combined_83kmeans.png"><img src="/images/Combined_83kmeans.png" alt=""></a>
 	<a href="/images/Combined_83kmeans.pngvariance_explained.png"><img src="/images/Combined_83kmeans.pngvariance_explained.png" alt=""></a>
 	<figcaption>Figure 3. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for M-lab data (d) Variance explained for M-lab data</figcaption>
+</figure>
+
+We assigned each of the counties in New England to a cluster for each of the data sets. After that we used the clusters to plot the demographics for the counties in each of those clusters and see if there are any obvious trends. Results for the broadbandmap.gov site can be observed below. 
+
+<figure class="third">
+	<a href="/images/BBand_83_cluster_group_0.png"><img src="/images/BBand_83_cluster_group_0.png" alt=""></a>
+	<a href="/images/BBand_83_cluster_group_1.png"><img src="/images/BBand_83_cluster_group_1.png" alt=""></a>
+	<a href="/images/BBand_83_cluster_group_2.png"><img src="/images/BBand_83_cluster_group_2.png" alt=""></a>
+	<a href="/images/BBand_83_cluster_group_3.png"><img src="/images/BBand_83_cluster_group_3.png" alt=""></a>
+	<a href="/images/BBand_83_cluster_group_4.png"><img src="/images/BBand_83_cluster_group_4.png" alt=""></a>
+	<a href="/images/BBand_83_cluster_group_5.png"><img src="/images/BBand_83_cluster_group_5.png" alt=""></a>
+	<figcaption>Caption describing these three images.</figcaption>
 </figure>
