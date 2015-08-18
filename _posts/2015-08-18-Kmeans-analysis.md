@@ -5,7 +5,7 @@ description: "k-means analysis done for different data sets to highlight interne
 <!-- modified: 2015-08-18 -->
 tags: [outreachy, m-lab, k-means]
 image:
-  feature: MedianRTT85.png
+  feature: MedianRTT_83.png
   credit: elf11
 
 comments: true
@@ -236,3 +236,11 @@ In Figure 7 we can observe the same graphic as Figure 5 just with clustering don
 	<figcaption style="align: center;">Figure 7. m-lab data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
+To further highlight the difference in service between the rural and urban communities, as well as between communities with a higher median income and those with a lower median income, we plotted the median values for RTT, upload and download (in Mb/s) for each of those clusters. (Note: cluster 3 is represented by one county so the graphs will not contain it).
+
+<figure class="third">
+	<a href="/images/MedianRTT_83.png"><img src="/images/MedianRTT_83.png" alt=""></a>
+	<a href="/images/MedianUpload_83.png"><img src="/images/MedianUpload_83.png" alt=""></a>
+	<a href="/images/MedianDownload_83.png"><img src="/images/MedianDownload_83.png" alt=""></a>
+	<figcaption style="align: center;">Figure 7. m-lab data mean demographics characteristics for each cluster</figcaption>
+</figure>
