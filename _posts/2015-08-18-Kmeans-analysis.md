@@ -213,4 +213,26 @@ As it can be seen in the images the data was clustered by the internet specifica
 
 To test if the hypothesis that rural and urban counties are served differently by ISPs we ran the same test on the m-lab data set.
 
+<figure class="third">
+	<a href="/images/Combined_83_cluster_group_0.png"><img src="/images/Combined_83_cluster_group_0.png" alt=""></a>
+	<a href="/images/Combined_83_cluster_group_1.png"><img src="/images/Combined_83_cluster_group_1.png" alt=""></a>
+	<a href="/images/Combined_83_cluster_group_2.png"><img src="/images/Combined_83_cluster_group_2.png" alt=""></a>
+</figure>
+<figure class="third">
+	<a href="/images/Combined_83_cluster_group_3.png"><img src="/images/Combined_83_cluster_group_3.png" alt=""></a>
+	<a href="/images/Combined_83_cluster_group_4.png"><img src="/images/Combined_83_cluster_group_4.png" alt=""></a>
+	<a href="/images/Combined_83_cluster_group_5.png"><img src="/images/Combined_83_cluster_group_5.png" alt=""></a>
+	<figcaption style="align: center;">Figure 6. m-lab data clustered and demographics characteristics plotted</figcaption>
+</figure>
+
+As it can be observed the same separation by the population, households and median income is visible with the m-lab data set too. (Note: just the internet data is from m-lab, the demographics data is still the one available on the broadbandmap.gov site that is provided by census.gov)
+
+In Figure 7 we can observe the same graphic as Figure 5 just with clustering done with m-lab data. We also used the mean value for each cluster in this situation.
+
+<figure class="third">
+	<a href="/images/Median_Population_comb_83.png"><img src="/images/Median_Population_comb_83.png" alt=""></a>
+	<a href="/images/Median_Households_comb_83.png"><img src="/images/Median_Households_comb_83.png" alt=""></a>
+	<a href="/images/Median_MedianIncome_comb_83.png"><img src="/images/Median_MedianIncome_comb_83.png" alt=""></a>
+	<figcaption style="align: center;">Figure 7. m-lab data mean demographics characteristics for each cluster</figcaption>
+</figure>
 
