@@ -236,13 +236,13 @@ In Figure 7 we can observe the same graphic as Figure 5 just with clustering don
 	<figcaption style="align: center;">Figure 7. m-lab data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
-To further highlight the difference in service between the rural and urban communities, as well as between communities with a higher median income and those with a lower median income, we plotted the median values for RTT, upload and download (in Mb/s) for each of those clusters.
+To further highlight the difference in service between the rural and urban communities, as well as between communities with a higher median income and those with a lower median income, we plotted the mean values for RTT, upload and download (in Mb/s) for each of those clusters.
 
 <figure class="third">
-	<a href="/images/Median_Median83.png"><img src="/images/Median_Median83.png" alt=""></a>
-	<a href="/images/Median_Upload83.png"><img src="/images/Median_Upload83.png" alt=""></a>
-	<a href="/images/Median_Download83.png"><img src="/images/Median_Download83.png" alt=""></a>
-	<figcaption style="align: center;">Figure 8. m-lab data median values for RTT, upload and download</figcaption>
+	<a href="/images/Average_Median83.png"><img src="/images/Average_Median83.png" alt=""></a>
+	<a href="/images/Average_Upload83.png"><img src="/images/Average_Upload83.png" alt=""></a>
+	<a href="/images/Average_Download83.png"><img src="/images/Average_Download83.png" alt=""></a>
+	<figcaption style="align: center;">Figure 8. m-lab data mean values for RTT, upload and download</figcaption>
 </figure>
 
 It can be observed how the values for the clusters with a high population and number of households (Cluster 2, 3, 6) have a better upload and download speed and a lower RTT.
