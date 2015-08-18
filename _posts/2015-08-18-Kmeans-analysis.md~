@@ -188,7 +188,56 @@ The plotted clusters in 2D and the variance plots can be observed in Figure3. Im
 	<figcaption style="align: center;">Figure 3. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for m-lab data (d) Variance explained for m-lab data (from left to right, top to bottom)</figcaption>
 </figure>
 
-We assigned each of the counties in New England to a cluster for each of the data sets. After that we used the clusters to plot the demographics for the counties in each of those clusters and see if there are any obvious trends. Results for the broadbandmap.gov site can be observed below. 
+We assigned each of the counties in New England to a cluster for each of the data sets. After that we used the clusters to plot the demographics for the counties in each of those clusters and see if there are any obvious trends. Results for the broadbandmap.gov site can be observed below. The code for assigning each of the counties to a cluster is below:
+
+{% highlight python %}
+def clustering(broad_df, target_names, K, fileName):
+    #initialize and carry out clustering
+    km = KMeans(n_clusters = K)
+    print 'clustering ', broad_df
+    km.fit(broad_df)
+    
+    print 'HERE'
+    
+    #find center of clusters
+    centers = km.cluster_centers_
+    print 'len(centers[0]) ', len(centers[0])
+    centers[centers<0] = 0 #the minimization function may find very small negative numbers, we threshold them to 0
+    centers = centers.round(2)
+    centers_num = len(centers[0])
+    file1 = fileName + 'centers.txt'
+    f = open(file1, 'w')
+    f.write('\n--------Centers of the four different clusters--------\n')
+    i = 0
+    county_str = 'County\t' 
+    while i < K:
+        j = i+1
+        val = ' Cent' + str(j)
+        county_str = county_str + val
+        i = i + 1
+    county_str = county_str + '\n'
+    f.write(county_str)
+    for i in range(centers_num):
+        j = 0
+        line = '' + target_names[i]
+        while j < K:
+            line = line + '\t' + str(centers[j,i])
+            j = j + 1
+        line = line + '\n'
+        f.write(line)
+    f.close()
+    #find which cluster each county is in
+    prediction = km.predict(broad_df)
+    file2 = fileName + 'prediction.txt'
+    f = open(file2, 'w')
+    #f.write('--------Which cluster each county is in--------\n')
+    f.write('{:<5},{}'.format('County','Cluster\n'))
+    print 'len(prediction) ',len(prediction)
+    for i in range(len(prediction)):
+        f.write('{:<5},{}'.format(target_names[i],prediction[i]+1))
+        f.write('\n')
+    f.close()
+{% endhighlight %}
 
 <figure class="third">
 	<a href="/images/BBand_83_cluster_group_0.png"><img src="/images/BBand_83_cluster_group_0.png" alt=""></a>
