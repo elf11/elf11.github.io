@@ -194,10 +194,12 @@ We assigned each of the counties in New England to a cluster for each of the dat
 	<a href="/images/BBand_83_cluster_group_0.png"><img src="/images/BBand_83_cluster_group_0.png" alt=""></a>
 	<a href="/images/BBand_83_cluster_group_1.png"><img src="/images/BBand_83_cluster_group_1.png" alt=""></a>
 	<a href="/images/BBand_83_cluster_group_2.png"><img src="/images/BBand_83_cluster_group_2.png" alt=""></a>
+</figure>
+<figure class="third">
 	<a href="/images/BBand_83_cluster_group_3.png"><img src="/images/BBand_83_cluster_group_3.png" alt=""></a>
 	<a href="/images/BBand_83_cluster_group_4.png"><img src="/images/BBand_83_cluster_group_4.png" alt=""></a>
 	<a href="/images/BBand_83_cluster_group_5.png"><img src="/images/BBand_83_cluster_group_5.png" alt=""></a>
-	<figcaption>Caption describing these three images.</figcaption>
+	<figcaption>Broadbandmap.gov data clustered and demographics characteristics plotted</figcaption>
 </figure>
 
 As it can be seen in the images the data was clustered by the internet specifications (internet speed, number of providers, type of connection etc.), but the clusters also present some particular demographics characteristics.
