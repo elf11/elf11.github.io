@@ -346,4 +346,9 @@ To sustain the findings of the New England analysis (the difference in service b
 	<figcaption style="align: center;">Figure 8. m-lab data mean values for RTT, upload and download</figcaption>
 </figure>
 
+As it can be seen in the graphs, cluster 3 has a pretty low population, but it has one of the highest means for median income, so the low RTT and high upload and download speed might be explained by that. Cluster 4 which has a high population has a RTT on the lower end and a good download speed, but an upload speed on the lower spectrum. This might not mean anything, but if we look at those clusters with low population - Cluster 1,8 and 9, and with a median income on the average lower end, we observe how they have the highest RTT (cluster 1 and 8), the lowest download speed (cluster 1) or down speeds on the slow spectrum (both clusters 8 and 9). The same situation can be observed with upload speed for those 3 clusters.
+
+# Conclusion
+
+Analysing those data sets using k-means clustering offered us a way to visualize and explore the data sets as well as finding out trends in the data. As we said before, the data clusters in rural and urban communities, communities with a lot of population and those with less population, that get distinctive by the way they are served by ISPs. We observed that communities with a high number for population/households and with a great median income are better served by ISPs, with better upload and download speeds and lower RTT.
 
