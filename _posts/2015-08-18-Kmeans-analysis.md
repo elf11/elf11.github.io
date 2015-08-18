@@ -32,9 +32,7 @@ Formally, k-means is a method of vector quantization `link: https://en.wikipedia
 
 k-means clustering uses iterative refinement in 3 basic steps: 
 * Choose k
-* Iterate over
-** assignment
-** update
+* Iterate over: (a) assignment (b) update
 
 The steps are repeated until convergence has been reached. We choose to use k-means mostly because it has some obvious advantages, like it can be used for exploratory analysis easily (what we are doing), scales well, it is efficient and will always converge.
 
@@ -43,5 +41,58 @@ The steps are repeated until convergence has been reached. We choose to use k-me
 Figure 1 shows k-means with a 2 dimensional feature vector, each point has two dimensions and x and a y. In our work we used a data set with a lot more features, in fact the broadbandmap.gov data set still has around 50 features after we cleaned it up. So we can only visualize the data in 2 or 3 dimensions, but to get a better intuition the figure uses a 2 dimensional vector that is clustered, the training examples are shown as dots and the centroids are shown as crosses. (a) is the original data set, (b) represents the random initial cluster centroids and images (c-f) illustrates two running of the k-means algorithm. In each iteration, each training example is assigned to the closest cluster centroid, then the cluster centroid is moved to the mean of the points assigned to it. This is the method we used in our analysis too.
 <figure>
 	<a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png"><img src="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" alt=""></a>
-	<figcaption><a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" title="Figure 1">Figure 1</a>.</figcaption>
+	<figcaption><a href="http://stanford.edu/~cpiech/cs221/img/kmeansViz.png" title="Figure 1, credit stanford.edu">Figure 1, credit stanford.edu</a>.</figcaption>
 </figure>
+
+## Method explained
+
+As said before, we are going to compare the results obtained by the analysing the m-lab data set with the broadbandmap.gov data set and see if the two show the same trends for the New England region, and after that we are going to analyse the South Atlantic region and see if we can extrapolate the study. 
+
+For the broadbandmap.gov data we initially tried to see if the data is normally distributed. We calculated the mean of the data for all the individual features we decided to keep and after that we fit a normal function to the data and see how the two actually differ. Results for all the 50 features we decided to keep for this data set can be found in the folder `link: https://github.com/elf11/Outreachy-Mlab/tree/master/k-means/normal_test`. The before normalization files can be interpreted like this: the y axis unit is number of samples within the bin intervals in the x axis, and the after normalization files like this: the y axis unit is frequency of the bin values as a percentage over all the samples. An example of the kind of graphs we obtained for the broadbandmap.gov data can be seen in Figure 2, where we see the feature of "NumberofWirelineProviderEqual2" being fit to a normal curve. 
+
+<figure>
+	<a href="https://github.com/elf11/Outreachy-Mlab/blob/master/k-means/normal_test/afternormalization_numberOfWirelineProvidersEquals2.png"><img src="https://github.com/elf11/Outreachy-Mlab/blob/master/k-means/normal_test/afternormalization_numberOfWirelineProvidersEquals2.png" alt=""></a>
+	<figcaption><a href="https://github.com/elf11/Outreachy-Mlab/blob/master/k-means/normal_test/afternormalization_numberOfWirelineProvidersEquals2.png" title="Figure 2, Number of Wireline Provider Equal 2, for New England region">Figure 2, Number of Wireline Provider Equal 2, for New England region</a>.</figcaption>
+</figure>
+
+{% highlight python %}
+def normal_func(broad_df, names, ending):
+    # trying out a normality test, see how the data is distributed in the
+    # broadbandmap.gov data set. Actually, I am fitting a normal curve to the data
+    # and see how it differs (from the graphs is pretty clear that the data is not normaly distributed)
+    for name in names:
+        array = broad_df[name].values
+        print name,' normality=',st.normaltest(array)
+        fig_name = 'normal_test/' + ending + '_afternormalization_' + name  +'.png'
+       
+        fig, ax = plt.subplots()
+
+        # The required parameters
+        num_steps = 10
+        max_percentage = 0.1
+        num_bins = 40
+        
+        # Calculating the maximum value on the y axis and the yticks
+        max_val = max_percentage * len(array)
+        step_size = max_val / num_steps
+        yticks = [ x * step_size for x in range(0, num_steps+1) ]
+        ax.set_yticks( yticks )
+        plt.ylim(0, max_val)
+        
+        # Running the histogram method
+        n, bins, patches = plt.hist(array, num_bins)
+        mu = np.mean(array)
+        sigma = np.std(array)
+        plt.plot(bins, mlab.normpdf(bins, mu, sigma))
+        
+        # Before normalisation: the y axis unit is number of samples within the bin intervals in the x axis        
+        # After normalisation: the y axis unit is frequency of the bin values as a percentage over all the samples
+        # To plot correct percentages in the y axis     
+        to_percentage = lambda y, pos: str(round( ( y / float(len(array)) ) * 100.0, 2)) + '%'
+        plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percentage))
+        plt.title('Normal curve fit to the data');
+        plt.savefig(fig_name, dpi=125)
+        plt.show()
+        plt.close()
+{% endhighlight %}
+
