@@ -310,7 +310,7 @@ We have extended the analysis on data from the South Atlantic region. We applied
 	<figcaption style="align: center;">Figure 9. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for m-lab data (d) Variance explained for m-lab data</figcaption>
 </figure>
 
-We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means. We are going to further present the demographics data just for the clusters formed by applying k-means on the m-lab data set, since that is the most relevant one.For this data set we decided to represent population as population density, calculated as county_population/land_area of a county. 
+We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means. We are going to further present the demographics data just for the clusters formed by applying k-means on the m-lab data set, since that is the most relevant one. This data set is a lot bigger than the previous one, the New England data set, due to the fact that there are ~500 counties in the South Atlantic region, compared to only 67 in New England. Due to this fact the reading of the graphs might be a little hard.
 
 <figure class="third">
 	<a href="/images/Density_Combined_1_cluster_group_0.png"><img src="/images/Density_Combined_1_cluster_group_0.png" alt=""></a>
