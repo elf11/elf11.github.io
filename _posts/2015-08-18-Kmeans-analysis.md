@@ -248,3 +248,17 @@ To further highlight the difference in service between the rural and urban commu
 It can be observed how the values for the clusters with a high population and number of households (Cluster 2, 3, 6) have a better upload and download speed and a lower RTT.
 
 The code for reproducing the graphs and collecting data from Piecewise can be found `link: https://github.com/elf11/Outreachy-Mlab/tree/master/k-means/code`.
+
+# South Atlantic region - Results, Code and Discussion
+
+We have extended the analysis on data from the South Atlantic region. We applied the same method in analysing this data set as previously explained and following are the graphs for the clusters obtained.
+
+<figure class="half">
+	<a href="/images/SA_BBand_1kmeans.png"><img src="/images/SA_BBand_1kmeans.png" alt=""></a>
+	<a href="/images/SA_BBand_1kmeans.pngvariance_explained.png"><img src="/images/SA_BBand_1kmeans.pngvariance_explained.png" alt=""></a>
+	<a href="/images/SA_Combined_1kmeans.png"><img src="/images/SA_Combined_1kmeans.png" alt=""></a>
+	<a href="/images/SA_Combined_1kmeans.pngvariance_explained.png"><img src="/images/SA_Combined_1kmeans.pngvariance_explained.png" alt=""></a>
+	<figcaption style="align: center;">Figure 9. 2D k-means clustering for m-lab South Atlantic data and the variance explained</figcaption>
+</figure>
+
+We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means.
