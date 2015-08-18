@@ -5,7 +5,7 @@ description: "k-means analysis done for different data sets to highlight interne
 <!-- modified: 2015-08-18 -->
 tags: [outreachy, m-lab, k-means]
 image:
-  feature: MedianRTT_83.png
+  feature: SA_BBand_1kmeans.png
   credit: elf11
 
 comments: true
@@ -185,7 +185,7 @@ The plotted clusters in 2D and the variance plots can be observed in Figure3. Im
 	<a href="/images/BBand_83kmeans.pngvariance_explained.png"><img src="/images/BBand_83kmeans.pngvariance_explained.png" alt=""></a>
 	<a href="/images/Combined_83kmeans.png"><img src="/images/Combined_83kmeans.png" alt=""></a>
 	<a href="/images/Combined_83kmeans.pngvariance_explained.png"><img src="/images/Combined_83kmeans.pngvariance_explained.png" alt=""></a>
-	<figcaption style="align: center;">Figure 3. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for m-lab data (d) Variance explained for m-lab data</figcaption>
+	<figcaption style="align: center;">Figure 3. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for m-lab data (d) Variance explained for m-lab data (from left to right, top to bottom)</figcaption>
 </figure>
 
 We assigned each of the counties in New England to a cluster for each of the data sets. After that we used the clusters to plot the demographics for the counties in each of those clusters and see if there are any obvious trends. Results for the broadbandmap.gov site can be observed below. 
@@ -258,7 +258,9 @@ We have extended the analysis on data from the South Atlantic region. We applied
 	<a href="/images/SA_BBand_1kmeans.pngvariance_explained.png"><img src="/images/SA_BBand_1kmeans.pngvariance_explained.png" alt=""></a>
 	<a href="/images/SA_Combined_1kmeans.png"><img src="/images/SA_Combined_1kmeans.png" alt=""></a>
 	<a href="/images/SA_Combined_1kmeans.pngvariance_explained.png"><img src="/images/SA_Combined_1kmeans.pngvariance_explained.png" alt=""></a>
-	<figcaption style="align: center;">Figure 9. 2D k-means clustering for m-lab South Atlantic data and the variance explained</figcaption>
+	<figcaption style="align: center;">Figure 9. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for m-lab data (d) Variance explained for m-lab data</figcaption>
 </figure>
 
 We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means.
+
+
