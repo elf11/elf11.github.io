@@ -181,9 +181,9 @@ def kmeans_func(broad_df, K, fileName):
 The plotted clusters in 2D and the variance plots can be observed in Figure3. Images (a-b) are representative for broadbandmap.gov data and images (c-d) are representative for M-lab data set.
 
 <figure class="half">
-	<img src="/images/BBand_83kmeans.png" alt="">
-	<img src="/images/BBand_83kmeans.pngvariance_explained.png" alt="">
-	<img src="/images/Combined_83kmeans.png" alt="">
-	<img src="/images/Combined_83kmeans.pngvariance_explained.png" alt="">
+	<a href="/images/BBand_83kmeans.png"><img src="/images/BBand_83kmeans.png" alt=""></a>
+	<a href="/images/BBand_83kmeans.pngvariance_explained.png"><img src="/images/BBand_83kmeans.pngvariance_explained.png" alt=""></a>
+	<a href="/images/Combined_83kmeans.png"><img src="/images/Combined_83kmeans.png" alt=""></a>
+	<a href="/images/Combined_83kmeans.pngvariance_explained.png"><img src="/images/Combined_83kmeans.pngvariance_explained.png" alt=""></a>
 	<figcaption>Figure 3. (a) 2D k-means clustering for broadbandmap.gov data (b) Variance explained for broadbandmap.gov data (c) 2D k-means clustering for M-lab data (d) Variance explained for M-lab data</figcaption>
 </figure>
