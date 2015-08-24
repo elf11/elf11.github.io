@@ -121,42 +121,10 @@ We are going to analyse each coefficient for all of our models and see what they
 	<figcaption style="align: center;">Figure 3, linear regression for median RTT </figcaption>
 </figure>
 
-
-MedianRTT ~ population
-the coefficients
-Intercept     66.845054
-population    -0.000002
-
-confidence intervals
-                    0          1
-Intercept   61.954426  71.735681
-population  -0.000015   0.000011
-
-p-values for model coefficients
-Intercept     2.530838e-37
-population    7.690526e-01
-
-R-squared value for the model
-0.00133564516481
-
-
-
-MedianRTT ~ medianIncome
-the coefficients
-Intercept       94.902806
-medianIncome    -0.000479
-
-confidence intervals
-                      0           1
-Intercept     79.297948  110.507664
-medianIncome  -0.000735   -0.000224
-
-p-values for model coefficients
-Intercept       2.235541e-18
-medianIncome    3.845225e-04
-
-R-squared value for the model
-0.177502986466
+<figure class="half">
+	<a href="/images/medianrtt_pop.png"><img src="/images/medianrtt_pop.png" alt=""></a>
+	<a href="/images/medianrtt_income.png"><img src="/images/medianrtt_income.png" alt=""></a>
+</figure>
 
 
 
@@ -168,41 +136,10 @@ Interpreting model coefficients: for example for MedianRTT ~ population model, t
 	<figcaption style="align: center;">Figure 4, linear regression for median download </figcaption>
 </figure>
 
-
-download_median ~ population
-the coefficients
-Intercept     5.850996
-population    0.000006
-
-confidence intervals
-                   0         1
-Intercept   4.744083  6.957908
-population  0.000003  0.000009
-
-p-values for model coefficients
-Intercept     9.885625e-16
-population    1.015543e-04
-
-R-squared value for the model
-0.2087835594
-
-
-download_median ~ medianIncome
-the coefficients
-Intercept      -2.234928
-medianIncome    0.000159
-
-confidence intervals
-                     0         1
-Intercept    -5.890936  1.421080
-medianIncome  0.000099  0.000219
-
-p-values for model coefficients
-Intercept       0.226551
-medianIncome    0.000001
-
-R-squared value for the model
-0.301756007441
+<figure class="half">
+	<a href="/images/download_pop.png"><img src="/images/download_pop.png" alt=""></a>
+	<a href="/images/download_income.png"><img src="/images/download_income.png" alt=""></a>
+</figure>
 
 
 Here we can interpret the download_median ~ population as follows: the population coefficient (β1) means that "unit" increase in population is associated with 0.000006 "unit" increase in median download speed. Or, 6 units increase in population ads 1M units increase in download speed.
@@ -210,45 +147,14 @@ Here we can interpret the download_median ~ population as follows: the populatio
 <figure class="half">
 	<a href="/images/upload_median ~ population.png"><img src="/images/upload_median ~ population.png" alt=""></a>
 	<a href="/images/upload_median ~ medianIncome.png"><img src="/images/upload_median ~ medianIncome.png" alt=""></a>
-	<figcaption style="align: center;">Figure 3, linear regression for median upload </figcaption>
+	<figcaption style="align: center;">Figure 5, linear regression for median upload </figcaption>
 </figure>
 
 
-upload_median ~ population
-the coefficients
-Intercept     1.212062
-population    0.000002
-
-confidence intervals
-                   0         1
-Intercept   0.727203  1.696922
-population  0.000001  0.000004
-
-p-values for model coefficients
-Intercept     0.000005
-population    0.000960
-
-R-squared value for the model
-0.155504840302
-
-
-
-upload_median ~ medianIncome
-the coefficients
-Intercept      -3.044039
-medianIncome    0.000080
-confidence intervals
-                     0         1
-Intercept    -4.450465 -1.637614
-medianIncome  0.000057  0.000103
-
-p-values for model coefficients
-Intercept       5.405864e-05
-medianIncome    2.267954e-09
-
-R-squared value for the model
-0.425192237591
-
+<figure class="half">
+	<a href="/images/upload_population.png"><img src="/images/upload_population.png" alt=""></a>
+	<a href="/images/upload_income.png"><img src="/images/upload_income.png" alt=""></a>
+</figure>
 
 Here we can interpret the download_median ~ population as follows: the population coefficient (β1) means that "unit" increase in population is associated with 0.000002 "unit" increase in median download speed. Or, 2 units increase in population ads 1M units increase in download speed.
 
@@ -264,6 +170,8 @@ Using the model created, we tested some conventional hypothesis regarding the mo
 The hypothesis testing is strongly related to confidence intervals, in statistics a confidence interval is a interval estimate of a population parameter. Usually it is calculated from observations, samples are observed and it is different from sample to sample. Statsmodels calculates 95% confidence intervals for our model coefficients, which are interpreted as follows: if the population from which this sample was drawn was sampled 100 times, approximately 95 of those confidence intervals would contain the "true" coefficient. So, how do we relate this to the hypothesis testing? We reject the null hypothesis and believe the alternative if the _95% confidence interval does not include zero_. The p-value (in the data above) is the probability that the coeficient is actually 0. 
 
 So, if the 95% confidence interval includes 0, then the p-value for that coeficient will be greater than 0.05. The only instance where this is the case is for the MedianRTT ~ population, where the p-value for population in relation to median rtt is greater than 0.05, so probably there is no relationship between the population and the median RTT. But, we can believe looking at the other values that there is a relationship between median rtt and median income, and download/upload speed and median income/population.
+
+The sources for this file, as well as sources for multivariable regression can be found [here](https://github.com/elf11/Outreachy-Mlab/blob/master/linear_regression/linear_regression.py).
 
 ## Conclusion
 
