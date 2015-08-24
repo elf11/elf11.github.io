@@ -121,43 +121,44 @@ We are going to analyse each coefficient for all of our models and see what they
 	<figcaption style="align: center;">Figure 3, linear regression for median RTT </figcaption>
 </figure>
 
+`
+MedianRTT ~ population
+the coefficients
+Intercept     66.845054
+population    -0.000002
 
->MedianRTT ~ population
->the coefficients
->Intercept     66.845054
->population    -0.000002
+confidence intervals
+                    0          1
+Intercept   61.954426  71.735681
+population  -0.000015   0.000011
 
->confidence intervals
->                    0          1
->Intercept   61.954426  71.735681
->population  -0.000015   0.000011
+p-values for model coefficients
+Intercept     2.530838e-37
+population    7.690526e-01
 
->p-values for model coefficients
->Intercept     2.530838e-37
->population    7.690526e-01
-
->R-squared value for the model
->0.00133564516481
+R-squared value for the model
+0.00133564516481
 
 
 
->MedianRTT ~ medianIncome
->the coefficients
->Intercept       94.902806
->medianIncome    -0.000479
+MedianRTT ~ medianIncome
+the coefficients
+Intercept       94.902806
+medianIncome    -0.000479
 
->confidence intervals
->                      0           1
->Intercept     79.297948  110.507664
->medianIncome  -0.000735   -0.000224
+confidence intervals
+                      0           1
+Intercept     79.297948  110.507664
+medianIncome  -0.000735   -0.000224
 
->p-values for model coefficients
->Intercept       2.235541e-18
->medianIncome    3.845225e-04
+p-values for model coefficients
+Intercept       2.235541e-18
+medianIncome    3.845225e-04
 
->R-squared value for the model
->0.177502986466
+R-squared value for the model
+0.177502986466
 
+`
 
 <figure class="half">
 	<a href="/images/download_median ~ population.png"><img src="/images/download_median ~ population.png" alt=""></a>
@@ -165,42 +166,42 @@ We are going to analyse each coefficient for all of our models and see what they
 	<figcaption style="align: center;">Figure 4, linear regression for median download </figcaption>
 </figure>
 
+`
+download_median ~ population
+the coefficients
+Intercept     5.850996
+population    0.000006
 
->download_median ~ population
->the coefficients
->Intercept     5.850996
->population    0.000006
+confidence intervals
+                   0         1
+Intercept   4.744083  6.957908
+population  0.000003  0.000009
 
->confidence intervals
->                   0         1
->Intercept   4.744083  6.957908
->population  0.000003  0.000009
+p-values for model coefficients
+Intercept     9.885625e-16
+population    1.015543e-04
 
->p-values for model coefficients
->Intercept     9.885625e-16
->population    1.015543e-04
-
->R-squared value for the model
->0.2087835594
+R-squared value for the model
+0.2087835594
 
 
->download_median ~ medianIncome
->the coefficients
->Intercept      -2.234928
->medianIncome    0.000159
+download_median ~ medianIncome
+the coefficients
+Intercept      -2.234928
+medianIncome    0.000159
 
->confidence intervals
->                     0         1
->Intercept    -5.890936  1.421080
->medianIncome  0.000099  0.000219
+confidence intervals
+                     0         1
+Intercept    -5.890936  1.421080
+medianIncome  0.000099  0.000219
 
->p-values for model coefficients
->Intercept       0.226551
->medianIncome    0.000001
+p-values for model coefficients
+Intercept       0.226551
+medianIncome    0.000001
 
->R-squared value for the model
->0.301756007441
-
+R-squared value for the model
+0.301756007441
+`
 
 <figure class="half">
 	<a href="/images/upload_median ~ population.png"><img src="/images/upload_median ~ population.png" alt=""></a>
@@ -208,41 +209,42 @@ We are going to analyse each coefficient for all of our models and see what they
 	<figcaption style="align: center;">Figure 3, linear regression for median upload </figcaption>
 </figure>
 
->upload_median ~ population
->the coefficients
->Intercept     1.212062
->population    0.000002
+`
+upload_median ~ population
+the coefficients
+Intercept     1.212062
+population    0.000002
 
->confidence intervals
->                   0         1
->Intercept   0.727203  1.696922
->population  0.000001  0.000004
+confidence intervals
+                   0         1
+Intercept   0.727203  1.696922
+population  0.000001  0.000004
 
->p-values for model coefficients
->Intercept     0.000005
->population    0.000960
+p-values for model coefficients
+Intercept     0.000005
+population    0.000960
 
->R-squared value for the model
->0.155504840302
+R-squared value for the model
+0.155504840302
 
 
->upload_median ~ medianIncome
->the coefficients
->Intercept      -3.044039
->medianIncome    0.000080
+upload_median ~ medianIncome
+the coefficients
+Intercept      -3.044039
+medianIncome    0.000080
 
->confidence intervals
->                     0         1
->Intercept    -4.450465 -1.637614
->medianIncome  0.000057  0.000103
+confidence intervals
+                     0         1
+Intercept    -4.450465 -1.637614
+medianIncome  0.000057  0.000103
 
->p-values for model coefficients
->Intercept       5.405864e-05
->medianIncome    2.267954e-09
+p-values for model coefficients
+Intercept       5.405864e-05
+medianIncome    2.267954e-09
 
->R-squared value for the model
->0.425192237591
-
+R-squared value for the model
+0.425192237591
+`
 
 ## Conclusion
 
