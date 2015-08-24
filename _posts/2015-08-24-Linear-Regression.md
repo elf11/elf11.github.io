@@ -121,7 +121,7 @@ We are going to analyse each coefficient for all of our models and see what they
 	<figcaption style="align: center;">Figure 3, linear regression for median RTT </figcaption>
 </figure>
 
-<p>
+
 MedianRTT ~ population
 the coefficients
 Intercept     66.845054
@@ -158,7 +158,9 @@ medianIncome    3.845225e-04
 R-squared value for the model
 0.177502986466
 
-</p>
+
+
+Interpreting model coefficients: for example for MedianRTT ~ population model, the population coefficient (β1) means that "unit" decrease in population is associated with 0.000002 "unit" decrease in median RTT. For the MedianRTT ~ medianIncome model, the medianIncome coefficient (β1) means that a "unit" decrease in median income is associated with 0.000479 decrease in median RTT. Or more clearly here, +4.79$ to the median income decreses the median RTT with 1ms.
 
 <figure class="half">
 	<a href="/images/download_median ~ population.png"><img src="/images/download_median ~ population.png" alt=""></a>
@@ -166,7 +168,7 @@ R-squared value for the model
 	<figcaption style="align: center;">Figure 4, linear regression for median download </figcaption>
 </figure>
 
-<p>
+
 download_median ~ population
 the coefficients
 Intercept     5.850996
@@ -201,7 +203,9 @@ medianIncome    0.000001
 
 R-squared value for the model
 0.301756007441
-</p>
+
+
+Here we can interpret the download_median ~ population as follows: the population coefficient (β1) means that "unit" increase in population is associated with 0.000006 "unit" increase in median download speed. Or, 6 units increase in population ads 1M units increase in download speed.
 
 <figure class="half">
 	<a href="/images/upload_median ~ population.png"><img src="/images/upload_median ~ population.png" alt=""></a>
@@ -209,7 +213,7 @@ R-squared value for the model
 	<figcaption style="align: center;">Figure 3, linear regression for median upload </figcaption>
 </figure>
 
-<p>
+
 upload_median ~ population
 the coefficients
 Intercept     1.212062
@@ -244,7 +248,11 @@ medianIncome    2.267954e-09
 
 R-squared value for the model
 0.425192237591
-</p>
+
+
+Here we can interpret the download_median ~ population as follows: the population coefficient (β1) means that "unit" increase in population is associated with 0.000002 "unit" increase in median download speed. Or, 2 units increase in population ads 1M units increase in download speed.
+
+The linear regression model is a high bias/low variance model. This means that if we sample repeatedly, the line will stay roughly in the same place (low variance), but the average of those models will not show the true relationship (high bias). 
 
 ## Conclusion
 
