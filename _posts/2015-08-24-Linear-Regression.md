@@ -215,38 +215,60 @@ Here we can interpret the download_median ~ population as follows: the populatio
 
 
 upload_median ~ population
+
 the coefficients
+
 Intercept     1.212062
+
 population    0.000002
 
 confidence intervals
                    0         1
+
 Intercept   0.727203  1.696922
+
 population  0.000001  0.000004
 
+
 p-values for model coefficients
+
 Intercept     0.000005
+
 population    0.000960
 
+
 R-squared value for the model
+
 0.155504840302
 
 
+
 upload_median ~ medianIncome
+
 the coefficients
+
 Intercept      -3.044039
+
 medianIncome    0.000080
 
 confidence intervals
+
                      0         1
+
 Intercept    -4.450465 -1.637614
+
 medianIncome  0.000057  0.000103
 
+
 p-values for model coefficients
+
 Intercept       5.405864e-05
+
 medianIncome    2.267954e-09
 
+
 R-squared value for the model
+
 0.425192237591
 
 
@@ -254,6 +276,17 @@ Here we can interpret the download_median ~ population as follows: the populatio
 
 The linear regression model is a high bias/low variance model. This means that if we sample repeatedly, the line will stay roughly in the same place (low variance), but the average of those models will not show the true relationship (high bias). 
 
+### Hypothesis testing and p-values
+
+Using the model created, we tested some conventional hypothesis regarding the model coefficients:
+
+1. _null hypothesis_: there is no relationship between the population/median income feature and median rtt, upload and download (so β1 equals 0)
+2. _alternative hypothesis_: there is a relationship between the population/median income feature and median rtt, upload and download (so β1 is not equal to 0)
+
+The hypothesis testing is strongly related to confidence intervals, in statistics a confidence interval is a interval estimate of a population parameter. Usually it is calculated from observations, samples are observed and it is different from sample to sample. Statsmodels calculates 95% confidence intervals for our model coefficients, which are interpreted as follows: if the population from which this sample was drawn was sampled 100 times, approximately 95 of those confidence intervals would contain the "true" coefficient. So, how do we relate this to the hypothesis testing? We reject the null hypothesis and believe the alternative if the _95% confidence interval does not include zero_. The p-value (in the data above) is the probability that the coeficient is actually 0. 
+
+So, if the 95% confidence interval includes 0, then the p-value for that coeficient will be greater than 0.05. The only instance where this is the case is for the MedianRTT ~ population, where the p-value for population in relation to median rtt is greater than 0.05, so probably there is no relationship between the population and the median RTT. But, we can believe looking at the other values that there is a relationship between median rtt and median income, and download/upload speed and median income/population.
+
 ## Conclusion
 
-Analysing those data sets using k-means clustering offered us a way to visualize and explore the data sets as well as finding out trends in the data. As we said before, the data clusters in rural and urban communities, communities with a lot of population and those with less population, that get distinctive by the way they are served by ISPs. We observed that communities with a high number for population/households and with a great median income are better served by ISPs, with better upload and download speeds and lower RTT.
+Using simple linear regression we analysed the m-lab data set and the correlation between the socio-economic  features and internet characteristics. After the analysis, we can believe that there is a correlation between those characteristics and the socio-economic features influence the internet speed characteristics of the counties in New England.
