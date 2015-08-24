@@ -215,60 +215,38 @@ Here we can interpret the download_median ~ population as follows: the populatio
 
 
 upload_median ~ population
-
 the coefficients
-
 Intercept     1.212062
-
 population    0.000002
 
 confidence intervals
                    0         1
-
 Intercept   0.727203  1.696922
-
 population  0.000001  0.000004
 
-
 p-values for model coefficients
-
 Intercept     0.000005
-
 population    0.000960
 
-
 R-squared value for the model
-
 0.155504840302
 
 
 
 upload_median ~ medianIncome
-
 the coefficients
-
 Intercept      -3.044039
-
 medianIncome    0.000080
-
 confidence intervals
-
                      0         1
-
 Intercept    -4.450465 -1.637614
-
 medianIncome  0.000057  0.000103
 
-
 p-values for model coefficients
-
 Intercept       5.405864e-05
-
 medianIncome    2.267954e-09
 
-
 R-squared value for the model
-
 0.425192237591
 
 
