@@ -5,7 +5,7 @@ description: "linear regression used to outline a model of correlation between p
 <!-- modified: 2015-08-18 -->
 tags: [outreachy, m-lab, k-means]
 image:
-  feature: medianIncome ~ download_median.png
+  feature: upload_median ~ medianIncome.png
   credit: elf11
 
 comments: true
@@ -22,59 +22,98 @@ We builded on the previous work, meaning that we did linear regression analysis 
 
 ## linear regression - how it works
 
-Why are we using linear regression? It is an easy to use method (not a lot of tuning required), runs fast, is highly interpretable and it can be used as basis for other methods (cross validation). 
+Why are we using linear regression? It is an easy to use method (not a lot of tuning required), runs fast, is highly interpretable and it can be used as basis for other methods (cross validation).
+
+Linear regression predictics a quantitative response using a single feature=predictor/input variable and has the following form: y=β0+β1x
+Where:
+y is the response
+x is the feature
+β0 is the intercept
+β1 is the coefficient for x
+
+Together, β0 and β1 are called the model coefficients. To create our model, we must "learn" the values of those coefficients. 
+
+### Intuition
+
+To learn the coefficients means to estimate them. In general they are being estimated using the least squared method. The least squared method finds the line that minimizes the sum of squared residuals - or "the sum of squared errors".
+
+Looking at Figure 1, we interpret it as follows: the black dots are the values for x and y (observed values), the blue line is the least squared error line and the red lines are the residuals/errors. The residuals are the distance between the observed value and the minimized line. 
+
+<figure style="align:center">
+	<a href="/images/lin_reg.png"><img src="/images/lin_reg.png" alt=""></a>
+	<figcaption style="align: center;">Figure 1 </figcaption>
+</figure>
+
+A good question is how do our coefficients β0 and β1 relate to this line, β0 is the intercept, or the value of y when x=0; and β1 is the slope of the line.
 
 ## Method explained
 
-As said before, we are going to compare the results obtained by the analysing the m-lab data set with the broadbandmap.gov data set and see if the two show the same trends for the New England region, and after that we are going to analyse the South Atlantic region and see if we can extrapolate the study. 
+Let's take a look at the data, ask some questions about it and then answer those questions using linear regression.
 
-For the broadbandmap.gov data we initially tried to see if the data is normally distributed. We calculated the mean of the data for all the individual features we decided to keep and after that we fit a normal function to the data and see how the two actually differ. Results for all the 50 features we decided to keep for this data set can be found in the folder `link: https://github.com/elf11/Outreachy-Mlab/tree/master/k-means/normal_test`. The before normalization files can be interpreted like this: the y axis unit is number of samples within the bin intervals in the x axis, and the after normalization files like this: the y axis unit is frequency of the bin values as a percentage over all the samples. An example of the kind of graphs we obtained for the broadbandmap.gov data can be seen in Figure 2, where we see the feature of "NumberofWirelineProviderEqual2" being fit to a normal curve. 
+The data set we used for this analysis consists of New England characteristics for internet speed and availability, collected with piecewise tool from m-lab and demographics data from the broadbandmap.gov site. We used the population and median income for each of the counties in New England from the census. 
 
-<figure style="align: center;">
-	<a href="/images/afternormalization_numberOfWirelineProvidersEquals2.png"><img src="/images/afternormalization_numberOfWirelineProvidersEquals2.png" alt=""></a>
-	<figcaption><a href="/images/afternormalization_numberOfWirelineProvidersEquals2.png" title="Figure 2, Number of Wireline Provider Equal 2, for New England region">Figure 2, Number of Wireline Provider Equal 2, for New England region</a>.</figcaption>
+What are the features we are interested in?
+
+- MedianRTT : the median round time trip in ms for each county in New England
+- download_median: the median download speed in mb/s for each county in New England
+- upload_median: the median upload speed in mb/s for each county in New England
+
+What are we interested in? How those features correlate with the population and the median income for each of those counties.
+
+We can visualize the relationship between those features using scatter plots. In Figure 2 below we have the population plotted against the MedianRTT, median_upload and median_download, same with medianIncome.
+
+<figure class="third">
+	<a href="/images/Relationship_feature_MedianRTT.png"><img src="/images/Relationship_feature_MedianRTT.png" alt=""></a>
+	<a href="/images/Relationship_feature_download.png"><img src="/images/Relationship_feature_download.png" alt=""></a>	
+	<a href="/images/Relationship_feature_upload.png"><img src="/images/Relationship_feature_upload.png" alt=""></a>
+	<figcaption style="align: center;">Figure 2 </figcaption>
 </figure>
 
-{% highlight python %}
-def normal_func(broad_df, names, ending):
-    # trying out a normality test, see how the data is distributed in the
-    # broadbandmap.gov data set. Actually, I am fitting a normal curve to the data
-    # and see how it differs (from the graphs is pretty clear that the data is not normaly distributed)
-    for name in names:
-        array = broad_df[name].values
-        print name,' normality=',st.normaltest(array)
-        fig_name = 'normal_test/' + ending + '_afternormalization_' + name  +'.png'
-       
-        fig, ax = plt.subplots()
+Questions about the data:
 
-        # The required parameters
-        num_steps = 10
-        max_percentage = 0.1
-        num_bins = 40
-        
-        # Calculating the maximum value on the y axis and the yticks
-        max_val = max_percentage * len(array)
-        step_size = max_val / num_steps
-        yticks = [ x * step_size for x in range(0, num_steps+1) ]
-        ax.set_yticks( yticks )
-        plt.ylim(0, max_val)
-        
-        # Running the histogram method
-        n, bins, patches = plt.hist(array, num_bins)
-        mu = np.mean(array)
-        sigma = np.std(array)
-        plt.plot(bins, mlab.normpdf(bins, mu, sigma))
-        
-        # Before normalisation: the y axis unit is number of samples within the bin intervals in the x axis        
-        # After normalisation: the y axis unit is frequency of the bin values as a percentage over all the samples
-        # To plot correct percentages in the y axis     
-        to_percentage = lambda y, pos: str(round( ( y / float(len(array)) ) * 100.0, 2)) + '%'
-        plt.gca().yaxis.set_major_formatter(FuncFormatter(to_percentage))
-        plt.title('Normal curve fit to the data');
-        plt.savefig(fig_name, dpi=125)
-        plt.show()
-        plt.close()
+1. Is there a relationship between the socio-economic features and the internet features?
+2. How strong is that relationship?
+3. Do population and median income influence the RTT and internet speeds?
+4. What is the effect of each of those (population and median income) on the internet characteristics?
+
+We used the following function to implement linear regression using the statsmodels library.
+
+{% highlight python %}
+def simple_linear_reg(x_str, y_str, form):
+    print 'features\n',form
+    # create a fitted model
+    lm = smf.ols(formula=form, data=data).fit()
+
+    print 'the coefficients\n',lm.params
+    
+    # create a DataFrame with the minimum and maximum values of the feature
+    X_new = pd.DataFrame({x_str: [data[x_str].min(), data[x_str].max()]})
+    print 'minimum and maximum values of the feature\n',X_new.head()
+    
+    # make predictions for those x values and store them
+    preds = lm.predict(X_new)
+    print 'predictions for minimum and maximum values of the feature\n',preds
+    
+    # first, plot the observed data
+    data.plot(kind='scatter', x=x_str, y=y_str)
+    
+    # then, plot the least squares line
+    plt.plot(X_new, preds, c='red', linewidth=2)
+    title = form+'.png'
+    plt.savefig(title, dpi=125)
+    plt.close()
+    
+    # print the confidence intervals for the model coefficients
+    print 'confidence intervals\n',lm.conf_int()
+    
+    # print the p-values for the model coefficients
+    print 'p-values for model coefficients\n',lm.pvalues
+    
+    # print the R-squared value for the model
+    print 'R-squared value for the model\n',lm.rsquared
 {% endhighlight %}
+
+The coefficients for our models are as follows:
 
 After that we had to decide on the best size for k (the number of clusters), so we run k-means over the data sets using scikit-learn in Python. Since intuition fails in high dimensions to choose the k we used the results from PCA and applied k-means over those results in order to obtain a 2-D visualisation of the clusters and to obtain a curve that describes the percentage of variance explained by each value of k between 1 and 14. As it can be seen in the code below, we read the values from the data frame, then we use a train_test_split function to split the size of our data set in two, we used 30% of the data for training, and the rest for testing (in practice the training set is somewhere between 20-40 %). After that we are applying PCA on the training set (we decided previously that the dimensionality of the data can be reduce to two without losing too much of the data variance), and on the data resulted from the PCA we apply k-means and plot the clusters in 2D.
 
