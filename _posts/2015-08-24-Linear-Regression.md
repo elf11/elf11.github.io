@@ -121,7 +121,7 @@ We are going to analyse each coefficient for all of our models and see what they
 	<figcaption style="align: center;">Figure 3, linear regression for median RTT </figcaption>
 </figure>
 
-`
+<p>
 MedianRTT ~ population
 the coefficients
 Intercept     66.845054
@@ -158,7 +158,7 @@ medianIncome    3.845225e-04
 R-squared value for the model
 0.177502986466
 
-`
+</p>
 
 <figure class="half">
 	<a href="/images/download_median ~ population.png"><img src="/images/download_median ~ population.png" alt=""></a>
@@ -166,7 +166,7 @@ R-squared value for the model
 	<figcaption style="align: center;">Figure 4, linear regression for median download </figcaption>
 </figure>
 
-`
+<p>
 download_median ~ population
 the coefficients
 Intercept     5.850996
@@ -201,7 +201,7 @@ medianIncome    0.000001
 
 R-squared value for the model
 0.301756007441
-`
+</p>
 
 <figure class="half">
 	<a href="/images/upload_median ~ population.png"><img src="/images/upload_median ~ population.png" alt=""></a>
@@ -209,7 +209,7 @@ R-squared value for the model
 	<figcaption style="align: center;">Figure 3, linear regression for median upload </figcaption>
 </figure>
 
-`
+<p>
 upload_median ~ population
 the coefficients
 Intercept     1.212062
@@ -244,7 +244,7 @@ medianIncome    2.267954e-09
 
 R-squared value for the model
 0.425192237591
-`
+</p>
 
 ## Conclusion
 
