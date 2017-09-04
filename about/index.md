@@ -7,7 +7,7 @@ I'm [Oana Niculaescu][github] and I'm a PhD candidate at the University of Massa
 
 
 In my spare time you can find me hacking away, practicing Tae Kwon Do, 
-in the gym, hiking, reading the latest news on technology and pondering if we are going to be overthrown by AI or just relaxing with friends.
+in the gym, hiking, relaxing with friends, reading the latest news on technology, and pondering if we are going to be overthrown by AI.
 
 You can find me on [Twitter][follow] or you can check out my resume [here][resume].
 
