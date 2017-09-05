@@ -254,9 +254,9 @@ def clustering(broad_df, target_names, K, fileName):
 As it can be seen in the images the data was clustered by the internet specifications (internet speed, number of providers, type of connection etc.), but the clusters also present some particular demographics characteristics. We can observe that the clusters formed have in common mostly 3 characteristis: population, households and median income. This might mean that the separation of the internet services might be done by rural-urban counties. Rurals counties are served differently than urban counties by ISPs. To highlight this difference more we can look at the following 3 graphs (Figure 5), that create a median value over each cluster for the 3 variables.
 
 <figure class="third">
-	<a href="/images/Median_Population_bb_83.png"><img src="/images/Median_Population_bb_83.png" alt=""></a>
-	<a href="/images/Median_Households_bb_83.png"><img src="/images/Median_Households_bb_83.png" alt=""></a>
-	<a href="/images/Median_MedianIncome_bb_83.png"><img src="/images/Median_MedianIncome_bb_83.png" alt=""></a>
+	<a href="/images/Median_Population_bb_83.png"><img src="/images/Median_Population_bb_83.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Median_Households_bb_83.png"><img src="/images/Median_Households_bb_83.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Median_MedianIncome_bb_83.png"><img src="/images/Median_MedianIncome_bb_83.png" alt="" width="300px" height="200px"></a>
 	<figcaption style="align: center;">Figure 5. Broadbandmap.gov data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
@@ -278,19 +278,19 @@ As it can be observed the same separation by the population, households and medi
 
 In Figure 7 we can observe the same graphic as Figure 5 just with clustering done with m-lab data. We also used the mean value for each cluster in this situation.
 
-<figure class="third">
-	<a href="/images/Median_Population_comb_83.png"><img src="/images/Median_Population_comb_83.png" alt=""></a>
-	<a href="/images/Median_Households_comb_83.png"><img src="/images/Median_Households_comb_83.png" alt=""></a>
-	<a href="/images/Median_MedianIncome_comb_83.png"><img src="/images/Median_MedianIncome_comb_83.png" alt=""></a>
+<figure>
+	<a href="/images/Median_Population_comb_83.png"><img src="/images/Median_Population_comb_83.png" alt="" width="300px" height="200px" ></a>
+	<a href="/images/Median_Households_comb_83.png"><img src="/images/Median_Households_comb_83.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Median_MedianIncome_comb_83.png"><img src="/images/Median_MedianIncome_comb_83.png" alt="" width="300px" height="200px"></a>
 	<figcaption style="align: center;">Figure 7. m-lab data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
 To further highlight the difference in service between the rural and urban communities, as well as between communities with a higher median income and those with a lower median income, we plotted the mean values for RTT, upload and download (in Mb/s) for each of those clusters.
 
-<figure class="third">
-	<a href="/images/Average_Median83.png"><img src="/images/Average_Median83.png" alt=""></a>
-	<a href="/images/Average_Upload83.png"><img src="/images/Average_Upload83.png" alt=""></a>
-	<a href="/images/Average_Download83.png"><img src="/images/Average_Download83.png" alt=""></a>
+<figure>
+	<a href="/images/Average_Median83.png"><img src="/images/Average_Median83.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Average_Upload83.png"><img src="/images/Average_Upload83.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Average_Download83.png"><img src="/images/Average_Download83.png" alt="" width="300px" height="200px"></a>
 	<figcaption style="align: center;">Figure 8. m-lab data mean values for RTT, upload and download</figcaption>
 </figure>
 
@@ -313,36 +313,36 @@ We have extended the analysis on data from the South Atlantic region. We applied
 We can observe that this time the number of clusters is 9, so k=9 to be able to cover all the variance in the data with k-means. We are going to further present the demographics data just for the clusters formed by applying k-means on the m-lab data set, since that is the most relevant one. This data set is a lot bigger than the previous one, the New England data set, due to the fact that there are ~500 counties in the South Atlantic region, compared to only 67 in New England. Due to this fact the reading of the graphs might be a little hard.
 
 <figure class="third">
-	<a href="/images/Density_Combined_1_cluster_group_0.png"><img src="/images/Density_Combined_1_cluster_group_0.png" alt=""></a>
-	<a href="/images/Density_Combined_1_cluster_group_1.png"><img src="/images/Density_Combined_1_cluster_group_1.png" alt=""></a>
-	<a href="/images/Density_Combined_1_cluster_group_2.png"><img src="/images/Density_Combined_1_cluster_group_2.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_0.png"><img src="/images/Density_Combined_1_cluster_group_0.png" alt="" width="300px" height="200px" ></a>
+	<a href="/images/Density_Combined_1_cluster_group_1.png"><img src="/images/Density_Combined_1_cluster_group_1.png" alt="" width="300px" height="200px" ></a>
+	<a href="/images/Density_Combined_1_cluster_group_2.png"><img src="/images/Density_Combined_1_cluster_group_2.png" alt="" width="300px" height="200px"></a>
 </figure>
 <figure class="third">
-	<a href="/images/Density_Combined_1_cluster_group_3.png"><img src="/images/Density_Combined_1_cluster_group_3.png" alt=""></a>
-	<a href="/images/Density_Combined_1_cluster_group_4.png"><img src="/images/Density_Combined_1_cluster_group_4.png" alt=""></a>
-	<a href="/images/Density_Combined_1_cluster_group_5.png"><img src="/images/Density_Combined_1_cluster_group_5.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_3.png"><img src="/images/Density_Combined_1_cluster_group_3.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Density_Combined_1_cluster_group_4.png"><img src="/images/Density_Combined_1_cluster_group_4.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Density_Combined_1_cluster_group_5.png"><img src="/images/Density_Combined_1_cluster_group_5.png" alt="" width="300px" height="200px"></a>
 <figure class="third">
-	<a href="/images/Density_Combined_1_cluster_group_6.png"><img src="/images/Density_Combined_1_cluster_group_6.png" alt=""></a>
-	<a href="/images/Density_Combined_1_cluster_group_7.png"><img src="/images/Density_Combined_1_cluster_group_7.png" alt=""></a>
-	<a href="/images/Density_Combined_1_cluster_group_8.png"><img src="/images/Density_Combined_1_cluster_group_8.png" alt=""></a>
+	<a href="/images/Density_Combined_1_cluster_group_6.png"><img src="/images/Density_Combined_1_cluster_group_6.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Density_Combined_1_cluster_group_7.png"><img src="/images/Density_Combined_1_cluster_group_7.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Density_Combined_1_cluster_group_8.png"><img src="/images/Density_Combined_1_cluster_group_8.png" alt="" width="300px" height="200px"></a>
 	<figcaption style="align: center;">Figure 10. m-lab data clustered and demographics characteristics plotted</figcaption>
 </figure>
 
 Due to the fact that we can not spot the trends so well in all those graphs, we plotted graphs with the median values for each cluster for population, number of households and median income.
 
 <figure class="third">
-	<a href="/images/Median_Population_comb_1.png"><img src="/images/Median_Population_comb_1.png" alt=""></a>
-	<a href="/images/Median_Households_comb_1.png"><img src="/images/Median_Households_comb_1.png" alt=""></a>
-	<a href="/images/Median_MedianIncome_comb_1.png"><img src="/images/Median_MedianIncome_comb_1.png" alt=""></a>
+	<a href="/images/Median_Population_comb_1.png"><img src="/images/Median_Population_comb_1.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Median_Households_comb_1.png"><img src="/images/Median_Households_comb_1.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Median_MedianIncome_comb_1.png"><img src="/images/Median_MedianIncome_comb_1.png" alt="" width="300px" height="200px"></a>
 	<figcaption style="align: center;">Figure 11. m-lab data mean demographics characteristics for each cluster</figcaption>
 </figure>
 
 To sustain the findings of the New England analysis (the difference in service between the rural and urban communities, as well as between communities with a higher median income and those with a lower median income), we plotted the mean values for RTT, upload and download (in Mb/s) for each of those clusters in the South Atlantic region.
 
 <figure class="third">
-	<a href="/images/Average_MedianRTT1.png"><img src="/images/Average_MedianRTT1.png" alt=""></a>
-	<a href="/images/Average_Download1.png"><img src="/images/Average_Download1.png" alt=""></a>
-	<a href="/images/Average_Upload1.png"><img src="/images/Average_Upload1.png" alt=""></a>
+	<a href="/images/Average_MedianRTT1.png"><img src="/images/Average_MedianRTT1.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Average_Download1.png"><img src="/images/Average_Download1.png" alt="" width="300px" height="200px"></a>
+	<a href="/images/Average_Upload1.png"><img src="/images/Average_Upload1.png" alt="" width="300px" height="200px"></a>
 	<figcaption style="align: center;">Figure 12. m-lab data mean values for RTT, upload and download</figcaption>
 </figure>
 
