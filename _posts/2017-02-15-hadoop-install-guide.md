@@ -55,8 +55,8 @@ Once the Mappers have finished, the Reducers can collect their sets of cards. We
 
 And that’s MapReduce! The Mappers are programs which each deal with a relatively small amount of data, and they all work in parallel. The Mappers output what we call ‘intermediate records’, which in this case were our index cards. Hadoop deals with all data in the form of records, and records are key­value pairs. In this example, the key was the store name, and the value was the sale total for that particular piece of input. Once the Mappers have finished, a phase of MapReduce called the ‘Shuffle and Sort’ takes place. The shuffle is the movement of the intermediate data from the Mappers to the Reducers and the combination of all the small sets of records together, and the sort is the fact that the Reducers will organize the sets of records ­­ the piles of index cards in our example ­­ into order. Finally, the Reduce phase works on one set of records ­­ one pile of cards ­­ at a time; it gets the key, and then a list of all the values, it processes those values in some way (adding them up in our case) and then it writes out its final data for that key.
 
-<figure style="align:center" width="400" height="200">
-    <a href="/images/mappers_reducers.jpg"><img src="/images/mappers_reducers.jpg" alt=""></a>
+<figure style="align:center">
+    <a href="/images/mappers_reducers.jpg"><img src="/images/mappers_reducers.jpg" alt="" width="300" height="200"></a>
     <figcaption style="align: center;">Mappers and Reducers</figcaption>
 </figure>
 
