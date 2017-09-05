@@ -63,14 +63,14 @@ What are we interested in? How those features correlate with the population and 
 We can visualize the relationship between those features using scatter plots. In Figure 2 below we have the population plotted against the MedianRTT, median_upload and median_download, same with medianIncome.
 
 <figure>
-	<a href="/images/Relationship_feature_MedianRTT.png"><img src="/images/Relationship_feature_MedianRTT.png" alt="" width="300" height="200"></a>
+	<a href="/images/Relationship_feature_MedianRTT.png"><img src="/images/Relationship_feature_MedianRTT.png" alt="" width="300px" height="200px"></a>
 </figure>
 <figure>
-	<a href="/images/Relationship_feature_download.png"><img src="/images/Relationship_feature_download.png" alt="" width="300" height="200"></a>
+	<a href="/images/Relationship_feature_download.png"><img src="/images/Relationship_feature_download.png" alt="" width="300px" height="200px"></a>
 </figure>
 <figure>
-	<a href="/images/Relationship_feature_upload.png"><img src="/images/Relationship_feature_upload.png" alt="" width="300" height="200"></a>
-	<figcaption style="align: center;">Figure 2 </figcaption>
+	<a href="/images/Relationship_feature_upload.png"><img src="/images/Relationship_feature_upload.png" alt="" width="300px" height="200px"></a>
+	<figcaption style="align: center;">Figure 2 - Data Points </figcaption>
 </figure>
 
 Questions about the data:
