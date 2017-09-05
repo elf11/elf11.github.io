@@ -60,8 +60,8 @@ Still, it might look like k-Anonymity is offering us the desired protection, rig
 
 2. complementary release attack : different releases of the same private table can be linked together to compromise k-anonymity
 
-<figure class="center" width="300" height="200">
-	<a href="/images/complementary-attack.png"><img src="/images/complementary-attack.png" alt=""></a>
+<figure class="center">
+	<a href="/images/complementary-attack.png"><img src="/images/complementary-attack.png" alt="" width="300" height="200"></a>
 </figure>
 
 So k-Anonymity does not provide privacy if sensitive values in an equivalence class lack diversity or the attacker has background knowledge. So it's a very weak privacy guarantee.
