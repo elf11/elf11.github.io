@@ -14,7 +14,7 @@ You can find me on [Twitter][follow] or you can check out my resume [here][resum
 
 [follow]: http://twitter.com/littleelf11
   "Follow me on Twitter"
-[github]: http://https://github.com/elf11/
+[github]: https://github.com/elf11/
   "Check out my GitHub account - semifrequently updated"
 [resume]: /files/2017.09-Oana_Niculaescu_CV_engl.pdf
   "Anderson Mesquita's current-ish resume"
