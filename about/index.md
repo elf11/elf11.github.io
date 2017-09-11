@@ -7,9 +7,9 @@ I'm [Oana Niculaescu][github] and I'm a PhD candidate at the University of Massa
 
 
 In my spare time you can find me hacking away, practicing Tae Kwon Do, 
-in the gym, hiking, relaxing with friends, reading the latest news on technology, and pondering if we are going to be overthrown by AI.
+in the gym, hiking, relaxing with friends, reading the latest news on technology, and pondering if we are going to be overthrown by AI. I am also spending some of my time helping high school students achieve their goals with the awesome people of the [Enroot][root] organization.
 
-You can find me on [Twitter][follow] or you can check out my resume [here][resume].
+You can find me on [Twitter][follow] or you can check out my resume [here][resume]. 
 
 
 [follow]: http://twitter.com/littleelf11
@@ -20,3 +20,4 @@ You can find me on [Twitter][follow] or you can check out my resume [here][resum
   "Anderson Mesquita's current-ish resume"
 [upb]: https://ocw.cs.pub.ro/courses/
 	"University Politehnica of Bucharest - course page"
+[root]: http://www.enrooteducation.org/
