@@ -15,7 +15,7 @@ share: true
 Supposedly you want to sort three values, A, B, and C. But you want to do this in an intuitive way, such that a 5-year-old would understand your process. What are you going to do? Get a 5-year-old and have them sort those values. They are going to look at the three values and decide to divide them unconsciously in smaller subproblems. First, they wonder if A is smaller than B. Then, they want to see if B is smaller than C. If A < B and B < C, then they conclude that A < B < C. But, if B is not smaller than C, then a third question comes to mind, is A < C. The kid gets lost with all those different solutions and decides to keep track of them by writing them down. He draws a node for each question and an edge for each answer. Unconsciously he draws a solution that might look like the one Figure 1. 
 
 <figure class="center">
-	<a href="/images/decisionTree.png"><img src="/images/decissionTree.png" alt="Figure 1. Decision Tree for sorting three values A, B, and C"></a>
+	<a href="/images/decisionTree.png"><img src="/images/decisionTree.png" alt="Figure 1. Decision Tree for sorting three values A, B, and C"></a>
 </figure>
 
 <br/>
