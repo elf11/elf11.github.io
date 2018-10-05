@@ -96,7 +96,7 @@ From this information, we can talk about our goal: to predict Name (or, type of 
 <br/><br/>
 
 <figure class="center">
-	<a href="/images/decisionTreeFitting.png"><img src="/images/decisionTreeFitting.png" alt="Listing 3. Fit the decision tree classifier to the IRIS dataset"></a>
+	<a href="/images/decissionTreeFitting.png"><img src="/images/decissionTreeFitting.png" alt="Listing 3. Fit the decision tree classifier to the IRIS dataset"></a>
 </figure>
 
 <br/><br/>
