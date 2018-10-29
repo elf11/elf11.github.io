@@ -57,7 +57,7 @@ There are two types of statistical techniques, parametric and non-parametric one
 
 
 <figure class="center">
-	<a href="/images/Figure2.svg"><img src="/images/Figure2.svg" alt="Figure 2. Visualizing the data points and identifying outliers"></a>
+	<a href="/images/Figure_2.svg"><img src="/images/Figure_2.svg" alt="Figure 2. Visualizing the data points and identifying outliers"></a>
 </figure>
 
 <br/><br/>
@@ -75,7 +75,7 @@ This model is used to learn an underlying pattern of the dataset with the hope t
 We can visualize the highlighted outliers in Figure 3, we can see that our assumption that the initial data was having an underlying Gaussian distribution was correct. But the method is not very precise, since many of the close points to the main cluster were not detected as outliers, though in some situations they might be.<br/>
 
 <figure class="center">
-	<a href="/images/Figure3.png"><img src="/images/Figure3.png" alt="Figure 3. Outliers’ visualization"></a>
+	<a href="/images/Figure_3.png"><img src="/images/Figure_3.png" alt="Figure 3. Outliers’ visualization"></a>
 </figure>
 
 <br/><br/>
@@ -83,7 +83,7 @@ We can visualize the highlighted outliers in Figure 3, we can see that our assum
 <b>CUSUM Algorithm</b> is one of the classic techniques used for detecting point changes in data and more recently for detecting anomalies. The implementation for the CUSUM algorithm varies, one form of it involves the calculation of the cumulative sum of positive and negative changes (gt+, gt-) in the data and comparing to a threshold. If the threshold is exceeded then a change must have occurred and the cumulative sum is restarted from 0. Of course, the data might present a slow drift either upwards or downwards and that might be detected as a change. To avoid that the algorithm can be tuned with a drift parameter. The proper working of the algorithm depends on those two parameters: threshold and drift. So, properly tuning those is desirable. The literature recommends to start with a very high threshold, choose drift as half of the expected change in the data, then set the threshold in  such a way that the number of false alarms (false changes in the data) is obtained.<br/>
 
 <figure class="center">
-	<a href="/images/Figure4.png"><img src="/images/Figure4.png" alt="Figure 4. Point change and anomaly detection using threshold 2 and drift 0.002"></a>
+	<a href="/images/Figure_4.png"><img src="/images/Figure_4.png" alt="Figure 4. Point change and anomaly detection using threshold 2 and drift 0.002"></a>
 </figure>
 
 <br/><br/>
@@ -91,7 +91,7 @@ We can visualize the highlighted outliers in Figure 3, we can see that our assum
 We are going to try to detect the points of change and anomalies on the same data set from before, we are going to use the latency column as the time series on top of which we are going to run the CUSUM algorithm. And to illustrate the point of tuning the threshold and drift parameters properly we are going to have two runs of the algorithm. One, very bad, where almost every point in the series is considered an anomaly and a change point. This can be observed in Figure 4 where we have a threshold of 2 and a very low drift parameter equal to 1.5 . On the other hand in Figure 5 we can observe that by adjusting the threshold, this time it has a value of 4, and the drift parameter, we are allowing the trend to move either way by 1.5, we are obtaining a way better outcome.<br/>
 
 <figure class="center">
-	<a href="/images/Figure5.png"><img src="/images/Figure5.png" alt="Figure 5. Point change and anomaly detection using threshold 4 and drift 1.5"></a>
+	<a href="/images/Figure_5.png"><img src="/images/Figure_5.png" alt="Figure 5. Point change and anomaly detection using threshold 4 and drift 1.5"></a>
 </figure>
 
 <br/><br/>
